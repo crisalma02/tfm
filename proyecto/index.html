@@ -21,7 +21,12 @@
       $('[data-toggle="popover"]').popover()
     })
   </script>
-  <teiHeader>
+  <style>
+    teiHeader.hidden {
+        visibility: hidden;
+    }
+</style>
+<teiHeader class="hidden">
     <fileDesc>
       <titleStmt>
         <title><em>Colloquia de los Hermeneumata Pseudodositheana</em></title>
@@ -44,9 +49,7 @@
   </teiHeader>
 </head>
 
-
-  <body>
-    
+  <body>    
     <header>
     <nav class="navbar navbar-inverse" role="navigation">
    <div class="container">
@@ -88,12 +91,12 @@
           <p style="color: red;"><l n="2"><strong>προερχόμενος</strong></l></p>
           <p><l n="3">ἀπήντησεν</l></p>
           <p><l n="4">τοῦ φίλου αὐτοῦ</l></p>
-          <p><l n="5">καὶ εἶπεν· Χαῖρε Γάϊε,</l></p>
+          <p><l n="5">καὶ εἶπεν· Χαῖρε <persName>Γάϊε</persName>,</l></p>
           <p><l n="6">καὶ κατεφίλησεν αὐτόν.</l></p>
           <p><l n="7">καὶ ἀντησπάσατο λέγων·</l></p>
         <lg n="2>"  
           <br>
-          <p><l n="1">Καλῶς ζήσαις, Λούκιε·</l></p>
+          <p><l n="1">Καλῶς ζήσαις, <persName>Λούκιε</persName>·</l></p>
           <p><l n="2">ἔστιν σε ἰδεῖν;</l></p>
           <p><l n="3">Tί πράττεις;</l></p>
           <p><l n="4">Πάντα ὀρθῶς.</l></p>
@@ -161,7 +164,7 @@
           <p><l n="15">Λαβὲ παρ᾿ αὐτοῦ κέρμα</l></p>
           <p><l n="16">καὶ ἀκολούθει.</l></p>
           <p><l n="17">Καθὼς συνεταξάμεθα,</l></p>
-          <p><l n="18">πάρεστιν Γάϊος.</l></p>
+          <p><l n="18">πάρεστιν <persName>Γάϊος</persName>.</l></p>
           <p><l n="19">συγκαλέσωμεν αὐτὸν</l></p>
           <p><l n="20">εἰς τὴν συμβουλήν.</l></p>
           <p><l n="21">ἐνθάδε ἔχομεν</l></p>
@@ -181,7 +184,7 @@
           <p><l n="35">τὴν ἀπόφασιν.</l></p>
           <p><l n="36">ἤκουσας,</l></p>
           <p><l n="37">ὅτι ἐνικήσαμεν,</l></p>
-          <p><l n="38">Γάϊε;</l></p>
+          <p><l n="38"><persName>Γάϊε</persName>;</l></p>
         </lg> 
         </group>
       </div>
@@ -194,13 +197,13 @@
           <p><l n="2">procedens</l></p>
           <p><l n="3">ocurrit</l></p>
           <p><l n="4">amico suo</l></p>
-          <p><l n="5">et dixit: Ave, Gaie</l></p>
+          <p><l n="5">et dixit: Ave, <persName>Gaie</persName></l></p>
           <p><l n="6">et osculatus est eum.</l></p>
           <p><l n="7">et resalutavit dicens:</l></p>
           </lg>
           <br>
           <lg n="2">
-          <p><l n="1">Bene valeas, Lucie;</l></p>
+          <p><l n="1">Bene valeas, <persName>Lucie</persName>;</l></p>
           <p><l n="2">est te videre?</l></p>
           <p><l n="3">Quid agis?</l></p>
           <p><l n="4">Omnia recte.</l></p>
@@ -268,7 +271,7 @@
           <p><l n="15">Accipe ab eo nummos</l></p>
           <p><l n="16">et sequere.</l></p>
           <p><l n="17">Sicut constituimus,</l></p>
-          <p><l n="18">adest Gaius.</l></p>
+          <p><l n="18">adest <persName>Gaius</persName>.</l></p>
           <p><l n="19">convocemus eum</l></p>
           <p><l n="20">in consilium.</l></p>
           <p><l n="21">hic habemus</l></p>
@@ -288,7 +291,7 @@
           <p><l n="35">sententiam.</l></p>
           <p><l n="36">audisti,</l></p>
           <p><l n="37">quia vicimus,</l></p>
-          <p><l n="38">Gaie?</l></p>
+          <p><l n="38"><persName>Gaie</persName>?</l></p>
           </lg>
         </group>
 
@@ -302,13 +305,13 @@
           <p><l n="2">acercándose</l></p>
           <p><l n="3">se encontró</l></p>
           <p><l n="4">con un amigo suyo</l></p>
-          <p><l n="5">y le dijo: "¡hola Gayo!"</l></p>
+          <p><l n="5">y le dijo: "¡hola <persName>Gayo</persName>!"</l></p>
           <p><l n="6">y le dio un beso.</l></p>
           <p><l n="7">Este le devolvió el saludo diciendo:</l></p>
           </lg>
           <br>
           <lg n="2">
-          <p><l n="1">¡Qué bien estás, Lucio!</l></p>
+          <p><l n="1">¡Qué bien estás, <persName>Lucio</persName>!</l></p>
           <p><l n="2">¿De verdad te estoy viendo?</l></p>
           <p><l n="3">Lucio: ¿Cómo estás?</l></p>
           <p><l n="4">Gayo: Todo bien, </l></p>
@@ -376,7 +379,7 @@
           <p><l n="12">Que te dé las monedas</l></p>
           <p><l n="13">y ven conmigo.</l></p>
           <p><l n="14">Tal y como concretamos,</l></p>
-          <p><l n="15">Gayo está aquí.</l></p>
+          <p><l n="15"></persName>Gayo</persName> está aquí.</l></p>
           <p><l n="16">Vamos a traerle</l></p>
           <p><l n="17">a nuestra conversación.</l></p>
           <p><l n="18">Aquí tenemos</l></p>
@@ -396,7 +399,7 @@
           <p><l n="32">el veredicto.</l></p>
           <p><l n="33">Has oído</l></p>
           <p><l n="34">que hemos ganado,</l></p>
-          <p><l n="35">Gayo?</l></p>
+          <p><l n="35"><persName>Gayo</persName>?</l></p>
         </group>
 
 <br><br>
