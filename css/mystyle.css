@@ -1,0 +1,17 @@
+.barranav {
+	position: relative;
+	top: 0px;
+	background: #F5F5F5;
+}
+teiHeader, gen, number, case, per, tns, mood, form.hidden {
+     visibility: hidden;
+}
+.fondo {
+	background-color: #FFF8DC
+}
+.centrado {
+	text-align: center;
+}
+.imgley{
+	width: 100%
+}

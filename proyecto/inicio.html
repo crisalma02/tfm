@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
+  <html lang="es">
+    <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Inicio TFM</title>
     <meta charset="utf-8" lang="es">
@@ -14,28 +14,56 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script>
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    })
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
     </script>
-  </head>
-  <body>
-    <div class="container">
-    <header>
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-          <ul class="nav navbar-nav navbar-right">
-           <li class="active"><a href="inicio.html">Inicio</a></li>
-           <li><a href="index.html">Edición Digital</a></li>
-          </ul> 
-        </div>
-      </nav>
-    </header>
-    
+    <style>
+      teiHeader, gen, number, case, per, tns, mood, form.hidden {
+          visibility: hidden;
+      }
+  </style>
+      <body class="fondo">
+        <header>
+          <nav class="navbar navbar-inverse barranav" role="navigation">
+            <div class="container">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#">Instrucciones</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edición Digital<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Edición y Traducción</a></li>
+                    <li><a href="#">Edición enriquecida</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
 
-      </div> <!-- fin del container -->
-    </body>
+        <div class="container">
+
+        <div class="jumbotron">
+          <div class="container">
+            <h2 class="center"><em>Colloquia Hermeneumata Pseudodositheana</em></h2>
+            <div class="row">
+              <div class="col-md-8">
+                <p>Con esta página se pretende llevar a cabo una edición digital enriquecida de los recientemente editados por Eleanor Dickey <em>Coloquios de los Hermeneumata Pseudositheana</em>, en concreto, a una selección de estos que tratan sobre temas específicamente legales, así como su traducción al castellano. Además, cabe destacar que se ha llegado la conclusión de que existe una ligera similitud del uso de estos textos para el aprendizaje de lenguas con algunas aplicaciones existentes en la actualidad, como DuoLingo</p>
+              </div>
+              <div class="col-md-4">
+                <img src="../img/ley.jpg" class="imgley">
+              </div>
+            </div>
+            <!--<p><a class="btn btn-primary btn-lg" role="button" href="index.html">Leer más</a></p>-->
+          </div>
+        </div>
+
+
+        </div> <!--/container--> 
+      </body>
   </html>
+

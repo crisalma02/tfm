@@ -21,11 +21,6 @@
         $('[data-toggle="popover"]').popover()
       })
     </script>
-    <style>
-      teiHeader.hidden {
-          visibility: hidden;
-      }
-  </style>
   <teiHeader class="hidden">
       <fileDesc>
         <titleStmt>
@@ -38,11 +33,11 @@
           <author>Cristina Álvarez</author>
           <date>Noviembre 2018</date>
         <publicationStmt>  
-          <p><lb n="">Trabajo realizado como Trabajo Fin de Máster del Máster en Letras Digitales de la UCM</lb></p>
+          <p>Trabajo realizado como Trabajo Fin de Máster del Máster en Letras Digitales de la UCM</p>
           <date when="2018"/>
         </publicationStmt>
         <sourceDesc>
-          <p><lb n="">Se trata de unos textos utilizados en el mundo antiguo para que los latinos aprendieran griego. En concreto en este trabajo se van a ver algunos recientemente encontrados que tratan sobre temas legales.</lb></p>
+          <p>Se trata de unos textos utilizados en el mundo antiguo para que los latinos aprendieran griego. En concreto en este trabajo se van a ver algunos recientemente encontrados que tratan sobre temas legales.</p>
         </sourceDesc>  
         </editionStmt>
       </fileDesc>
@@ -51,16 +46,22 @@
 
     <body>    
       <header>
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-          <ul class="nav navbar-nav navbar-right">
-           <li class="active"><a href="inicio.html">Inicio</a></li>
-           <li><a href="index.html">Edición Digital</a></li>
-          </ul> 
-        </div>
-      </nav>
-    </header>
-    </header>
+          <nav class="navbar navbar-inverse barranav" role="navigation">
+            <div class="container">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#">Instrucciones</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edición Digital<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Edición y Traducción</a></li>
+                    <li><a href="#">Edición enriquecida</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
 
       <div class="container">
 
@@ -73,18 +74,18 @@
           <h4>Texto en griego</h4>
 
           <lg n="1" type="parrafo">  
-            <p><lb n="1">Καὶ <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>nominativo</case>-->οἰκοδεσπότης</gramGrp></lb></p>
-            <p><lb n="2"><gramGrp type="adjetivo"><!--<gen>masculino</gen><number>singular</number><case>nominativo</case>-->προερχόμενος</gramGrp></lb></p>
-            <p><lb n="3"><gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>aoristo</tns>-->ἀπήντησεν</gramGrp></lb></p>
-            <p><lb n="4">τοῦ <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>genitivo</case>-->φίλου</gramGrp> αὐτοῦ</lb></p>
-            <p><lb n="5">καὶ <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>aoristo</tns>-->εἶπεν</gramGrp>· <sp who="Lucio"><gramGrp type="verbo"><!--<per>segunda</per><number>singular</number><tns>presente</tns>-->Χαῖρε</gramGrp> <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>vocativo</case>--><persName>Γάϊε</persName></gramGrp></sp>,</lb></p>
-            <p><lb n="6">καὶ <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>aoristo</tns>-->κατεφίλησεν</gramGrp> αὐτόν.</lb></p>
-            <p><lb n="7">καὶ <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>aoristo</tns>-->ἀντησπάσατο</gramGrp> λέγων·</lb></p>
+            <p><lb n="1">Καὶ <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>οἰκοδεσπότης</gramGrp></lb></p>
+            <p><lb n="2"><gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><form class="hidden">participio</form><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>προερχόμενος</gramGrp></lb></p>
+            <p><lb n="3"><gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>ἀπήντησεν</gramGrp></lb></p>
+            <p><lb n="4">τοῦ <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">genitivo</case>φίλου</gramGrp> αὐτοῦ</lb></p>
+            <p><lb n="5">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>εἶπεν</gramGrp>· <sp who="Lucio"><gramGrp type="verbo"><per class="hidden">segunda</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">imperativo</mood>Χαῖρε</gramGrp> <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Γάϊε</persName></gramGrp></sp>,</lb></p>
+            <p><lb n="6">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>κατεφίλησεν</gramGrp> αὐτόν.</lb></p>
+            <p><lb n="7">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>ἀντησπάσατο</gramGrp> <gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><form class="hidden">participio</form><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>λέγων</gramGrp>·</lb></p>
           <lg n="2" type="parrafo">  
             <br>
-            <p><lb n="1"><sp who="Gayo">Καλῶς <gramGrp type="verbo"><!--<per>segunda</per><number>singular</number><tns>presente</tns>-->ζήσαις</gramGrp>, <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>vocativo</case>--><persName>Λούκιε</persName></gramGrp>·</lb></p>
-            <p><lb n="2"><gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>presente</tns>-->ἔστιν</gramGrp> σε <gramGrp type="verbo"><!--<per>impersonal</per><tns>presente</tns><mood>infinitivo</mood>-->ἰδεῖν</gramGrp>;</sp></lb></p>
-            <p><lb n="3"><sp who="Lucio">Tί <gramGrp type="verbo"><!--<per>segunda</per><number>singular</number><tns>presente</tns>-->πράττεις</gramGrp>;</sp></lb></p>
+            <p><lb n="1"><sp who="Gayo">Καλῶς <gramGrp type="verbo"><per class="hidden">segunda</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>ζήσαις</gramGrp>, <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Λούκιε</persName></gramGrp>·</lb></p>
+            <p><lb n="2"><gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>ἔστιν</gramGrp> σε <gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">aoristo</tns><mood class="hidden">infinitivo</mood>ἰδεῖν</gramGrp>;</sp></lb></p>
+            <p><lb n="3"><sp who="Lucio">Tί <gramGrp type="verbo"><per class="hidden">segunda</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>πράττεις</gramGrp>;</sp></lb></p>
             <p><lb n="4"><sp who="Gayo">Πάντα ὀρθῶς.</lb></p>
             <p><lb n="5">πῶς ἔχεις;</sp></lb></p>
             <p><lb n="6"><sp who="Lucio">Συγχαίρομαί σοι</lb></p>
@@ -125,10 +126,10 @@
             <p><lb n="9">Συνετάξω;</lb></p>
             <p><lb n="10">περὶ ποίαν ὥραν;</lb></p>
             <p><lb n="11">ἐν ποίωι τόπωι;</sp></lb></p>
-            <p><lb n="12"><sp who="Lucio">᾿Σ τὸ φόρον,</lb></p>
+            <p><lb n="12"><sp who="Lucio"><place>᾿Σ τὸ φόρον,</lb></p>
             <p><lb n="13">ἐν τῆι στοᾶι,</lb></p>
-            <p><lb n="14">ἐγγὺς τῆς στοᾶς</lb></p>
-            <p><lb n="15">τῆς Νίκης.</sp></lb></p>
+            <p><lb n="14">ἐγγὺς <placeName>τῆς στοᾶς</lb></p>
+            <p><lb n="15">τῆς Νίκης</placeName>.</place></sp></lb></p>
             <p><lb n="16"><sp who="Gayo">Μετ᾿ ὀλίγον ἐκεῖ ἔρχομαι.</sp></lb></p>
           </lg>
             <br>
@@ -179,19 +180,19 @@
           <group lang="latin">
             <h4>Texto en latín</h4>
             <lg n="1" type="parrafo">
-            <p><lb n="1">Et <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>nominativo</case>-->pater(familias)</gramGrp></lb></p>
-            <p><lb n="2"><gramGrp type="adjetivo"><!--<gen>masculino</gen><number>singular</number><case>nominativo</case>-->procedens</gramGrp></lb></p>
-            <p><lb n="3"><gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>perfecto</tns>-->ocurrit</gramGrp></lb></p>
-            <p><lb n="4"><gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>dativo</case>-->amico</gramGrp> suo</lb></p>
-            <p><lb n="5">et <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>perfecto</tns>-->dixit</gramGrp>: <sp who="Lucio">Ave, <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>vocativo</case>--><persName>Gaie</persName></gramGrp></sp></lb></p>
-            <p><lb n="6">et <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>perfecto</tns>-->osculatus est</gramGrp> eum.</lb></p>
-            <p><lb n="7">et <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>perfecto</tns>-->resalutavit</gramGrp> dicens:</lb></p>
+            <p><lb n="1">Et <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>pater(familias)</gramGrp></lb></p>
+            <p><lb n="2"><gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><form class="hidden">participio</form><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>procedens</gramGrp></lb></p>
+            <p><lb n="3"><gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">perfecto</tns><mood class="hidden">indicativo</mood>ocurrit</gramGrp></lb></p>
+            <p><lb n="4"><gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">dativo</case>amico</gramGrp> suo</lb></p>
+            <p><lb n="5">et <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">perfecto</tns><mood class="hidden">indicativo</mood>dixit</gramGrp>: <sp who="Lucio">Ave, <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Gaie</persName></gramGrp></sp></lb></p>
+            <p><lb n="6">et <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">perfecto</tns><mood class="hidden">indicativo</mood>osculatus est</gramGrp> eum.</lb></p>
+            <p><lb n="7">et <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">perfecto</tns><mood class="hidden">indicativo</mood>resalutavit</gramGrp> dicens:</lb></p>
             </lg>
             <br>
             <lg n="2" type="parrafo">
-            <p><lb n="1"><sp who="Gayo">Bene <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>presente</tns>-->valeas</gramGrp>, <gramGrp type="sustantivo"><!--<gen>masculino</gen><number>singular</number><case>vocativo</case>--><persName>Lucie</persName></gramGrp>;</lb></p>
-            <p><lb n="2"><gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>presente</tns>-->est</gramGrp> te <gramGrp type="verbo"><!--<per>impersonal</per><tns>presente</tns><mood>infinitivo</mood>-->videre</gramGrp>?</sp></lb></p>
-            <p><lb n="3"><sp who="Lucio">Quid <gramGrp type="verbo"><!--<per>tercera</per><number>singular</number><tns>presente</tns>-->agis</gramGrp>?</sp></lb></p>
+            <p><lb n="1"><sp who="Gayo">Bene <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">subjuntivo</mood>valeas</gramGrp>, <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Lucie</persName></gramGrp>;</lb></p>
+            <p><lb n="2"><gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>est</gramGrp> te <gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><mood class="hidden">infinitivo</mood>videre</gramGrp>?</sp></lb></p>
+            <p><lb n="3"><sp who="Lucio">Quid <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>agis</gramGrp>?</sp></lb></p>
             <p><lb n="4"><sp who="Gayo">Omnia recte.</lb></p>
             <p><lb n="5">quomodo habes?</lb><sp></lb></p>
             <p><lb n="6"><sp who="Lucio">Gratulor tibi</lb></p>
@@ -369,7 +370,7 @@
             <p><lb n="19">Vamos a traerle</lb></p>
             <p><lb n="20">a nuestra conversación.</lb></p>
             <p><lb n="21">Aquí tenemos</lb></p>
-            <p style="color: red;"><lb n="22">la prueba.</lb></p>
+            <p><lb n="22">la garantía.</lb></p>
             <p><lb n="23">-</lb></p>
             <p><lb n="24">-</lb></p>
             <p><lb n="25">-</lb></p>
@@ -394,7 +395,7 @@
         </div>
       </div> 
        
-      </div> <!-- /container -->
+      </div> <!--/container--> 
      
     </body>
   </html>
