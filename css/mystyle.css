@@ -7,11 +7,21 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
      visibility: hidden;
 }
 .fondo {
-	background-color: #FFF8DC
-}
-.centrado {
-	text-align: center;
+	background-color: #FCFCF4;
 }
 .imgcarrousel{
-	width: 100%
+	width:100%;
+	
+	margin: 0 auto;
+	height: 700px;
+	border-radius: 6%
+}
+.imgthumbnail {
+	width: 100%;
+	max-width: 100%;
+}
+.fondojumbo {
+	background-color: #FEFDDB;
+	border: solid #606668;
+	border-width: thin;
 }
