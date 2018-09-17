@@ -21,7 +21,20 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 	max-width: 100%;
 }
 .fondojumbo {
-	background-color: #FEFDDB;
+	background-color: #FCFCDE;
 	border: solid #606668;
 	border-width: thin;
+}
+.titulojumbo {
+	font-size: 27px;
+}
+.imgjumbo {
+	max-width: 100%;
+	position: relative;
+	top: 53px;
+	right: -17px;
+	border-radius: 2%;
+}
+.textjumbo {
+	text-align: justify;
 }
