@@ -29,12 +29,12 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 	font-size: 27px;
 }
 .imgjumbo {
-	max-width: 100%;
+	max-width: 115%;
 	position: relative;
-	top: 53px;
-	right: -17px;
+	top: 62px;
+	right: -10px;
 	border-radius: 2%;
 }
-.textjumbo {
+.textcentrado {
 	text-align: justify;
 }
