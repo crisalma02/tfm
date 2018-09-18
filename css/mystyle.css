@@ -38,3 +38,7 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 .textcentrado {
 	text-align: justify;
 }
+.botonacceso {
+	position: absolute;
+	left: 42%;
+}
