@@ -1,67 +1,93 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="es">
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Inicio TFM</title>
-    <meta charset="utf-8" lang="es">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
-    <link rel="shortcut icon" type="png" href="img/favicon.png">
-    <link rel="stylesheet" href="../css/mystyle.css">
-    <link rel="stylesheet" href="../font-awesome/css/fontawesome.css">
-    <link rel="stylesheet" href="../font-awesome/css/fontawesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
-      $(function () {
-        $('[data-toggle="popover"]').popover()
-      })
-    </script>
-  <teiHeader class="hidden">
-      <fileDesc>
-        <titleStmt>
-          <title><em>Colloquia de los Hermeneumata Pseudodositheana</em></title>
-          <editor>Eleanor Dickey</editor>
-          <sponsor>Departamento de Clásicas, Universidad de Reading, Inglaterra</sponsor>
-        </titleStmt>
-        <editionStmt>
-          <edition n="1">Edición digital</edition>
-          <author>Cristina Álvarez</author>
-          <date>Noviembre 2018</date>
-        <publicationStmt>  
-          <p>Trabajo realizado como Trabajo Fin de Máster del Máster en Letras Digitales de la UCM</p>
-          <date when="2018"/>
-        </publicationStmt>
-        <sourceDesc>
-          <p>Se trata de unos textos utilizados en el mundo antiguo para que los latinos aprendieran griego. En concreto en este trabajo se van a ver algunos recientemente encontrados que tratan sobre temas legales.</p>
-        </sourceDesc>  
-        </editionStmt>
-      </fileDesc>
-    </teiHeader>
-  </head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>E-Hermeneumata</title>
+      <meta charset="utf-8" lang="es">
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+      <link rel="stylesheet" href="../css/bootstrap.css">
+      <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+      <link rel="shortcut icon" type="png" href="img/favicon.png">
+      <link rel="stylesheet" href="../css/mystyle.css">
+      <link rel="stylesheet" href="../font-awesome/css/fontawesome.css">
+      <link rel="stylesheet" href="../font-awesome/css/fontawesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+      <script>
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+        $(function () {
+          $('[data-toggle="popover"]').popover()
+        })
+      </script>
+      <style>
+        teiHeader, gen, number, case, per, tns, mood, form.hidden {
+            visibility: hidden;
+        }
+      </style>
+
+      <!-- SlidesJS Required (if responsive): Sets the page width to the device width. -->
+      <meta name="viewport" content="width=device-width">
+      <!-- End SlidesJS Required -->
+
+      <!-- CSS for slidesjs.com example -->
+      <link rel="stylesheet" href="../css/example.css">
+      <link rel="stylesheet" href="../css/font-awesome.min.css">
+      <!-- End CSS for slidesjs.com example -->
+      <teiHeader class="hidden">
+          <fileDesc>
+            <titleStmt>
+              <title><em>Colloquia de los Hermeneumata Pseudodositheana</em></title>
+              <editor>Eleanor Dickey</editor>
+              <sponsor>Departamento de Clásicas, Universidad de Reading, Inglaterra</sponsor>
+            </titleStmt>
+            <editionStmt>
+              <edition n="1">Edición digital</edition>
+              <author>Cristina Álvarez</author>
+              <date>Noviembre 2018</date>
+            <publicationStmt>  
+              <p>Trabajo realizado como Trabajo Fin de Máster del Máster en Letras Digitales de la UCM</p>
+              <date when="2018"/>
+            </publicationStmt>
+            <sourceDesc>
+              <p>Se trata de unos textos utilizados en el mundo antiguo para que los latinos aprendieran griego. En concreto en este trabajo se van a ver algunos recientemente encontrados que tratan sobre temas legales.</p>
+            </sourceDesc>  
+            </editionStmt>
+          </fileDesc>
+        </teiHeader>
+    </head>
 
     <body>    
       <header>
-          <nav class="navbar navbar-inverse barranav" role="navigation">
-            <div class="container">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="#">Instrucciones</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edición Digital<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Edición y Traducción</a></li>
-                    <li><a href="#">Edición enriquecida</a></li>
-                  </ul>
-                </li>
+        <nav class="navbar navbar-inverse barranav" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Desplegar navegación</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">Menú principal</a>-->
+                <div id="navbar-ex1-collapse" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="intro.html">Introducción</a></li>
+                    <li><a href="actualidad.html">Actualidad</a></li>
+                    <li><a href="rosetta.html">Piedra Rosetta</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edición Digital<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="traduccion.html">Edición y Traducción</a></li>
+                        <li><a href="#">Edición enriquecida</a></li>
+                      </ul>
+                    </li>
               </ul>
             </div>
-          </nav>
-        </header>
+          </div>
+        </nav>
+      </header>
 
       <div class="container">
 
@@ -136,7 +162,7 @@
           <lg n="4" type="parrafo">
             <p><lb n="1"><sp who="Lucio">Ἀλλὰ παρακαλῶ, ἐν νῶι ἔχοις.</sp></lb></p>
             <p><lb n="2"><sp who="Gayo">Ἀμέριμνος ἦις·</lb></p>
-            <p style="color: red;"><lb n="3"><strong>ἐμοὶ μελήσει</strong></sp>.</lb></p>
+            <p><lb n="3">ἐμοὶ μελήσει</sp>.</lb></p>
             <p><lb n="4">Ἄγωμεν ἡμεῖς</lb></p>
             <p><lb n="5">πρὸς τὸν τραπεζίτην·</lb></p>
             <p><lb n="6">λάβωμεν παρ᾿ αὐτοῦ</lb></p>
@@ -206,7 +232,7 @@
             <p><lb n="14">ad proconsulem?</sp></lb></p>
             <p><lb n="15"><sp who="Lucio">Nec, ibi,</lb></p>
             <p><lb n="16">sed ad magistratus</lb></p>
-            <p><lb n="17">ex <span  style="color: red;"><strong>subscriptione</strong></span> praesidis</lb></p>
+            <p><lb n="17">ex subscriptione praesidis</lb></p>
             <p><lb n="18">provinciae.</sp></lb></p>
             <p><lb n="19"><sp who="Gayo">Quale autem est</lb></p>
             <p><lb n="20">ipsa res?</sp></lb></p>
@@ -226,7 +252,7 @@
             <p><lb n="2">de causa</lb></p>
             <p><lb n="3">cum adovcatis</lb></p>
             <p><lb n="4">tractare.</sp></lb></p>
-            <p style="color: red;"><lb n="5"><sp who="Gayo"><strong>Adhibuisti</strong>?</sp></lb></p>
+            <p><lb n="5"><sp who="Gayo">Adhibuisti?</sp></lb></p>
             <p><lb n="6"><sp who="Lucio">Adhibui.</sp></lb></p>
             <p><lb n="7"><sp who="Gayo">Quos?</sp> <sp who="Lucio">Tuos amicos.</sp></lb></p>
             <p><lb n="8"><sp who="Gayo">Bene fecisti.</lb></p>
@@ -243,7 +269,7 @@
             <lg n="4" type="parrafo">
             <p><lb n="1"><sp who="Lucio">Sed rogo, in mente habeas</sp></lb></p>
             <p><lb n="2"><sp who="Gayo">Securus esto;</lb></p>
-            <p style="color: red;"><lb n="3"><strong>mihi pertinet.</strong></sp></lb></p>
+            <p><lb n="3">mihi pertinet.</sp></lb></p>
             <p><lb n="4">Eamus nos</lb></p>
             <p><lb n="5">ad nummularium;</lb></p>
             <p><lb n="6">accipiamus ab eo</lb></p>
@@ -314,7 +340,7 @@
             <p><lb n="14">¿contra el proconsul?</sp></lb></p>
             <p><lb n="15">L.: <sp who="Lucio">Tampoco,</lb></p>
             <p><lb n="16">contra un magistrado</lb></p>
-            <p><lb n="17">que está fuera de la ¿jurisdicción? del <span data-toggle="tooltip" data-placement="top" title="Se traduce como juez pues se refiere al iudex pedaneus que es designado por el gobernador"><strong>juez</strong></span></lb></p>
+            <p><lb n="17">que está fuera de la jurisdicción del <span data-toggle="tooltip" data-placement="top" title="Se traduce como juez pues se refiere al iudex pedaneus que es designado por el gobernador"><strong>juez</strong></span></lb></p>
             <p><lb n="18">de la provincia.</sp></lb></p>
             <p><lb n="19">G.: <sp who="Gayo">¿Y de qué se trata</lb></p>
             <p><lb n="20">este caso?</lb>sp></lb></p>
@@ -336,14 +362,14 @@
             <p><lb n="4">junto con mis abogados.</sp></lb></p>
             <p><lb n="5">G.: <sp who="Gayo">¿Has buscado abogados?</sp></lb></p>
             <p><lb n="6">L.: <sp who="Lucio">Sí.</sp></lb></p>
-            <p><lb n="7">G.: <sp who="Gayo">¿Quiénes son?</sp> L.: <sp who="Lucio">Tus <span style="color: red;">amigos / colegas</span></sp></lb></p>
+            <p><lb n="7">G.: <sp who="Gayo">¿Quiénes son?</sp> L.: <sp who="Lucio">Tus colegas</sp></lb></p>
             <p><lb n="8">G.: <sp who="Gayo">Bien hecho.</lb></p>
             <p><lb n="9">¿Habéis quedado?</lb></p>
             <p><lb n="10">¿Alrededor de qué hora y</lb></p>
             <p><lb n="11">dónde?</sp></lb></p>
             <p><lb n="12">L.: <sp who="Lucio">En el foro, </lb></p>
             <p><lb n="13">en el pórtico, </lb></p>
-            <p><lb n="14">cerca de la <span style="color: red;"><strong>stoa</strong></span></lb></p>
+            <p><lb n="14">cerca de la puerta</lb></p>
             <p><lb n="15">de la Victoria.</sp></lb></p>
             <p><lb n="16">G.: <sp who="Gayo">Vengo en un rato.</sp></lb></p>
             </lg>
@@ -351,7 +377,7 @@
             <lb n="4" type="parrafo">
             <p><lb n="1">L.: <sp who="Lucio">Pero por favor, acuérdate.</sp></lb></p>
             <p><lb n="2">G.: <sp who="Gayo">No te preocupes, </lb></p>
-            <p style="color: red;"><lb n="3">me concierne.</sp></lb></p>
+            <p><lb n="3">me concierne.</sp></lb></p>
             <p><lb n="4">L.: Vamos</lb></p>
             <p><lb n="5">al banquero</lb></p>
             <p><lb n="6">a pedirle</lb></p>
