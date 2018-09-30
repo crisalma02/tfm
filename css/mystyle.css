@@ -9,13 +9,7 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 .fondo {
 	background-color: #FCFCF4;
 }
-.imgcarrousel{
-	width:100%;
-	
-	margin: 0 auto;
-	height: 700px;
-	border-radius: 6%
-}
+
 .imgthumbnail {
 	width: 100%;
 	max-width: 100%;
