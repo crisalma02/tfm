@@ -58,7 +58,7 @@
         </teiHeader>
     </head>
 
-    <body>    
+    <body class="fondo">    
       <header>
         <nav class="navbar navbar-inverse barranav" role="navigation">
           <div class="container-fluid">
@@ -76,10 +76,10 @@
                     <li><a href="intro.html">Introducción</a></li>
                     <li><a href="actualidad.html">Actualidad</a></li>
                     <li><a href="rosetta.html">Piedra Rosetta</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edición Digital<b class="caret"></b></a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">Edición y Traducción</a></li>
+                        <li><a href="traduccion.html">Edición y Traducción</a></li>
                         <li><a href="#">Edición enriquecida</a></li>
                       </ul>
                     </li>
@@ -91,7 +91,17 @@
 
       <div class="container">
 
-      <div class="row">
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        <em>Colloquia Monacensia Einsidlensia</em></a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+              <div class="row">
         <pb n="1">
         <text>
         <group lang="greek">
@@ -106,7 +116,7 @@
             <p><lb n="4">τοῦ <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">genitivo</case>φίλου</gramGrp> αὐτοῦ</lb></p>
             <p><lb n="5">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>εἶπεν</gramGrp>· <sp who="Lucio"><gramGrp type="verbo"><per class="hidden">segunda</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">imperativo</mood>Χαῖρε</gramGrp> <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Γάϊε</persName></gramGrp></sp>,</lb></p>
             <p><lb n="6">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>κατεφίλησεν</gramGrp> αὐτόν.</lb></p>
-            <p><lb n="7">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>ἀντησπάσατο</gramGrp> <gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><form class="hidden">participio</form><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>λέγων</gramGrp>·</lb></p>
+            <p><lb n="7">καὶ <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">aoristo</tns><mood class="hidden">indicativo</mood>ἀντησπάσατο</gramGrp><gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><form class="hidden">participio</form><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">nominativo</case>λέγων</gramGrp>·</lb></p>
           <lg n="2" type="parrafo">  
             <br>
             <p><lb n="1"><sp who="Gayo">Καλῶς <gramGrp type="verbo"><per class="hidden">segunda</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>ζήσαις</gramGrp>, <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Λούκιε</persName></gramGrp>·</lb></p>
@@ -181,8 +191,8 @@
             <p><lb n="19">συγκαλέσωμεν αὐτὸν</lb></p>
             <p><lb n="20">εἰς τὴν συμβουλήν.</lb></p>
             <p><lb n="21"><sp who="Lucio">ἐνθάδε ἔχομεν</lb></p>
-            <p style="color: red;"><lb n="22">τὰ ἀσφαλίσματα,</sp></lb></p>
-            <p><lb n="23"><span  style="color: red;"><sp who="Gayo"><strong>Παρήγγειλας</strong></span> αὐτῶι;</sp></lb></p>
+            <p><lb n="22">τὰ ἀσφαλίσματα,</sp></lb></p>
+            <p><lb n="23"><sp who="Gayo">Παρήγγειλας αὐτῶι;</sp></lb></p>
             <p><lb n="24"><sp who="Lucio">Παρήγγειλα.</sp></lb></p>
             <p><lb n="25"><sp who="Gayo">Ἐμαρτυροποίησας;</sp></lb></p>
             <p><lb n="26"><sp who="Lucio">Ἐμαρτυροποίησα.</sp></lb></p>
@@ -214,7 +224,7 @@
             <p><lb n="6">et <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">perfecto</tns><mood class="hidden">indicativo</mood>osculatus est</gramGrp> eum.</lb></p>
             <p><lb n="7">et <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">perfecto</tns><mood class="hidden">indicativo</mood>resalutavit</gramGrp> dicens:</lb></p>
             </lg>
-            <br>
+            <br><br>
             <lg n="2" type="parrafo">
             <p><lb n="1"><sp who="Gayo">Bene <gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">subjuntivo</mood>valeas</gramGrp>, <gramGrp type="sustantivo"><gen class="hidden">masculino</gen><number class="hidden">singular</number><case class="hidden">vocativo</case><persName>Lucie</persName></gramGrp>;</lb></p>
             <p><lb n="2"><gramGrp type="verbo"><per class="hidden">tercera</per><number class="hidden">singular</number><tns class="hidden">presente</tns><mood class="hidden">indicativo</mood>est</gramGrp> te <gramGrp type="verbo"><per class="hidden">impersonal</per><tns class="hidden">presente</tns><mood class="hidden">infinitivo</mood>videre</gramGrp>?</sp></lb></p>
@@ -322,7 +332,7 @@
             <p><lb n="6">y le dio un beso.</lb></p>
             <p><lb n="7">Este le devolvió el saludo diciendo:</lb></p>
             </lg>
-            <br>
+            <br><br>
             <lg n="2" type="parrafo">
             <p><lb n="1"><sp who="Gayo">¡Qué bien estás, <persName>Lucio</persName>!</lb></p>
             <p><lb n="2">¿De verdad te estoy viendo?</sp></lb></p>
@@ -383,7 +393,7 @@
             <p><lb n="6">a pedirle</lb></p>
             <p><lb n="7">cien denarios</lb></p>
             <p><lb n="7">y se los damos al abogado defensor</lb></p>
-            <p style="color: green;"><lb n="9">como un honorario, <sup>2</sup></lb></p>
+            <p><lb n="9">como un <span data-toggle="tooltip" data-placement="top" title="Entiendo esto como una especie de soborno al abogado de la otra parte"><strong>honorario</strong></span>,</lb></p>
             <p><lb n="10">y a nuestros abogados</lb></p>
             <p><lb n="11">y a los expertos en leyes</lb></p>
             <p><lb n="12">para que nos defiendan</lb></p>
@@ -392,33 +402,65 @@
             <p><lb n="15">Que te dé las monedas</lb></p>
             <p><lb n="16">y ven conmigo.</lb></p>
             <p><lb n="17">Tal y como concretamos,</lb></p>
-            <p><lb n="18"></persName>Gayo</persName> está aquí.</lb></p>
+            <p><lb n="18"><persName>Gayo</persName> está aquí.</lb></p>
             <p><lb n="19">Vamos a traerle</lb></p>
             <p><lb n="20">a nuestra conversación.</lb></p>
             <p><lb n="21">Aquí tenemos</lb></p>
             <p><lb n="22">la garantía.</lb></p>
-            <p><lb n="23">-</lb></p>
-            <p><lb n="24">-</lb></p>
-            <p><lb n="25">-</lb></p>
-            <p><lb n="26">-</lb></p>
-            <p><lb n="27"><sp who="Gayo">Prepárate.</sp></lb></p>
-            <p><lb n="28"><sp who="Lucio">Estoy preparado.</sp></lb></p>
-            <p><lb n="29"><sp who="Gayo">Y tu adversario</lb></p>
-            <p><lb n="30">quiere <span style="color: red;">intervenir / interrumpir</span>.</lb></p>
+            <p><lb n="23"><sp who="Gayo">G.: </lb>¿Has hecho un juramento?</sp></p>
+            <p><lb n="24"><sp who="Lucio">L.: Sí.</sp></lb></p>
+            <p><lb n="25"><sp who="Gayo">G.: ¿Has declarado?</sp></lb></p>
+            <p><lb n="26"><sp who="Lucio">L.: Sí.</sp></lb></p>
+            <p><lb n="27"><sp who="Gayo">G.: Pues prepárate.</sp></lb></p>
+            <p><lb n="28"><sp who="Lucio">L.: Estoy preparado.</sp></lb></p>
+            <p><lb n="29"><sp who="Gayo">G.: Tu adversario</lb></p>
+            <p><lb n="30">quiere intervenir.</lb></p>
             <p><lb n="31">Calla.</sp></lb></p>
-            <p><lb n="32"><sp who="Lucio">Estoy callado.</sp></lb></p>
-            <p><lb n="33"><sp who="Gayo">Guarda silencio, </lb></p>
+            <p><lb n="32"><sp who="Lucio">L.: Estoy callado.</sp></lb></p>
+            <p><lb n="33"><sp who="Gayo">G.: Guarda silencio, </lb></p>
             <p><lb n="34">vamos a escuchar</lb></p>
             <p><lb n="35">el veredicto.</sp></lb></p>
-            <p><lb n="36"><sp who="Lucio">Has oído</lb></p>
+            <p><lb n="36"><sp who="Lucio">L.: ¿Has oído</lb></p>
             <p><lb n="37">que hemos ganado,</lb></p>
             <p><lb n="38"><persName>Gayo</persName>?</sp></lb></p>
           </group>
-
-  <br><br>
-  <p><sup>2:</sup> Entiendo esto como que quieren sobornar al abogado contrario, ¿puede ser?</p>
         </text>
-        </div>
+        </div> <!-- fin primer coloquio -->
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Collapsible Group 2</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Collapsible Group 3</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div>
+</div>
+
+
       </div> 
        
       </div> <!--/container--> 
