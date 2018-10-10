@@ -49,6 +49,60 @@
                 allParas[i].setAttribute("style", "background-color:" + colorMark + ";");
 
         });
+    };
+
+    function buscador() {
+      var texto = document.getElementById('texto').textContent;
+      var lawword = document.getElementById('lawword').textContent;
+      parser = new DOMParser();
+      xmlDoc1 = parser.parseFromString(texto, "text/xml");
+      xmlDoc2 = parser.parseFromString(lawword, "text/xml");
+      // Obtengo la palabra a buscar
+      var nom = document.getElementById('buscapalabra').value;
+      // Consultas xPath
+      st1 = "//persName[@corresp='#" + nom + "']";
+      st2 = "//person[@id='" + nom + "']//*";
+      var result1 = xmlDoc1.evaluate(st1, xmlDoc1, null, XPathResult.ITERATOR, null);
+      var result2 = xmlDoc2.evaluate(st2, xmlDoc2, null, XPathResult.ITERATOR, null);
+        try {
+          // Se van a iterar los dos nodos
+          var node1 = result1.iterateNext();
+          var node2 = result2.iterateNext();
+          // En infoNode1 guardo la información que obtenga del textoxml (en mi caso text)
+          var infoNode1 = "";
+          // En el array datos guardo la información que obtenga del nombresxml (en mi caso lawword)
+          var i = 0;
+          var datos = [];
+          while (node1) {
+            infoNode1 = node1.textContent.toString();
+            node1 = result1.iterateNext();
+          }
+          while (node2) {
+            // Almaceno en el array datos, los campos necesarios para mostrar la tabla
+            datos[i] = node2.textContent.toString();
+            node2 = result2.iterateNext();
+            i++;
+          }
+          if (infoNode1 != "") {
+            // Creación de la tabla con la información
+            var loadTable = '<table class="table table-bordered"><thead><tr><th>' + "Información de" + " " + infoNode1 + '</th></tr></thead>';
+            for (var i = 0; i < datos.length - 1; i++) {
+              loadTable += '</tr><tr><td width="118">' + datos[i] + '</td>';
+            }
+            loadTable += '</tr></table>';
+            loadTable += "<button type='button' class='btn btn-default'><i class='glyphicon glyphicon-download-alt'></i><a target='_blank' href='" + datos[datos.length - 1] + "'> Descargar esta información</a></button>";
+            //Cargo la tabla
+            document.getElementById('elementoTabla').innerHTML = "";
+            $('#elementoTabla').append(loadTable.valueOf());
+            document.getElementById('elementoTabla').style.visibility = 'visible';
+          } else {
+            alert('Elige una opción válida');
+          }
+        }
+      catch (e) {
+        alert('No se encuentra la palabra');
+        dump('Error: Document tree modified during iteration ' + e);
+      }
     }
 
 
@@ -143,6 +197,33 @@
             <label><input onclick="palabraslatin()" type="checkbox" value="conj">Conjunciones</label>
             <br>
             <label><input onclick="palabraslatin()" type="checkbox" value="adv">Adverbios</label>     
+        </div>
+    </div>
+
+	<div id="custom-search-input">
+		<p> Buscador de palabras jurídicas</p>
+        
+  	  	<div class="input-group col-md-3">
+
+        	<select id="buscapalabra" placeholder="buscar">
+		      <option value="">- - - </option>
+		      <option value="juicio"> Juicio</option>
+		      <option value="jurisdiccion">Jurisdicción</option>
+		      <option value="juez">Juez</option>
+		      <option value="caso">Caso</option>
+		      <option value="declarar">Declarar</option>
+		      <option value="abogado">Abogado</option>
+		      <option value="leyes">Leyes</option>
+		      <option value="veredicto">Veredicto</option>
+		      <option value="procurador">Procurador</option>
+		      <option value="letrado">Letrado</option>
+		    </select>
+
+        	<span class="input-group-btn">
+     			<button class="btn btn-info btn-xs" onclick="buscador()">
+        		<i class="glyphicon glyphicon-search"></i>
+      			</button>
+    		</span>
         </div>
     </div>
 
@@ -427,7 +508,7 @@
             </p>
             <p>
             	<lb n="25">
-            	<a href="#" data-toggle="popover" title="παρέδρευσον" data-content="Verbo παρεδρεύω. 2ª persona del singular. Aoristo de imperativo.">παρέδρευσον</a> ἡμῖν·
+            	<w name="aor"><a href="#" data-toggle="popover" title="παρέδρευσον" data-content="Verbo παρεδρεύω. 2ª persona del singular. Aoristo de imperativo.">παρέδρευσον</a></w> ἡμῖν·
             	</lb>
             </p>
             <p>
@@ -1372,7 +1453,7 @@
 	            </p>
 	            <p>
 	            	<lb n="9">
-	            	un juicio.</sp>
+	            	un <w corresp="juicio">juicio</w>.</sp>
 	            	</lb>
 	            </p>
 	            <p>
@@ -1412,7 +1493,7 @@
 	            </p>
 	            <p>
 	            	<lb n="17">
-	            		que está fuera de la jurisdicción del <span data-toggle="tooltip" data-placement="top" title="Se traduce como juez pues se refiere al iudex pedaneus que es designado por el gobernador"><strong>juez</strong></span>
+	            		que está fuera de la jurisdicción del juez</span>
 	            	</lb>
 	            </p>
 	            <p>
@@ -1603,7 +1684,7 @@
             </p>
             <p>
             	<lb n="9">
-            		como un <span data-toggle="tooltip" data-placement="top" title="Entiendo esto como una especie de soborno al abogado de la otra parte"><strong>honorario</strong></span>,
+            		como un honorario</span>,
             	</lb>
             </p>
             <p>
@@ -1954,7 +2035,7 @@
                         </lb>
                     </p>
           			<p>
-                        <lb n="3">σωθείης ἀεί,</lb>
+                        <lb n="3"><w name="aor">σωθείης</w> ἀεί,</lb>
                     </p>
           			<p>
                         <lb n="4">προσφίλτατε.</lb>
@@ -1972,25 +2053,25 @@
                         <lb n="8"><sp who="person2">Ὡς οἱ θεοὶ</sp>
                     </p>
           			<p>
-                        <lb n="9">θέλουσιν.</lb>
+                        <lb n="9"><w name="pres">θέλουσιν</w>.</lb>
                     </p>
           			<p>
-                        <lb n="10">Τί πράττεις;</sp> <sp who="person1">Nῦν</lb>
+                        <lb n="10">Τί <w name="pres">πράττεις</w>;</sp> <sp who="person1">Nῦν</lb>
                     </p>
           			<p>
-                        <lb n="11">ἔπραττον,</lb>
+                        <lb n="11"><a href="#" data-toggle="popover" title="ἔπραττον" data-content="Verbo πράσσω. 1ª persona del singular. Imperfecto de indicativo activo."><w>ἔπραττον</w></a>,</lb>
                     </p>
           			<p>
                         <lb n="12">νῦν δὲ</lb>
                     </p>
           			<p>
-                        <lb n="13">σχολάζομαι.</sp></lb>
+                        <lb n="13"><w name="pres">σχολάζομαι</w>.</sp></lb>
                     </p>
           			<p>
-                        <lb n="14"><sp who="person2">Θέλω σοι</sp>
+                        <lb n="14"><sp who="person2"><w name="pres">Θέλω</w> σοι</sp>
                     </p>
           			<p>
-                        <lb n="15">ἐγχειρίσαι</lb>
+                        <lb n="15"><w name="nopers">ἐγχειρίσαι</w></lb>
                     </p>
           			<p>
                         <lb n="16">τὴν διοίκησιν</lb>
@@ -1999,19 +2080,19 @@
                         <lb n="17">τῆς ἐμῆς πράξεως.</lb>
                     </p>
           			<p>
-                        <lb n="18">ἄγωμεν.</lb>
+                        <lb n="18"><w name="pres">ἄγωμεν</w>.</lb>
                     </p>
           			<p>
-                        <lb n="19">περιπάτει</lb>
+                        <lb n="19"><w name="pres">περιπάτει</w></lb>
                     </p>
           			<p>
                         <lb n="20">καὶ ἐγὼ</lb>
                     </p>
           			<p>
-                        <lb n="21">δώσω σοι</lb>
+                        <lb n="21"><a href="#" data-toggle="popover" title="δώσω" data-content="Verbo δίδωμι. 1ª persona del singular. Futuro de indicativo activo."><w>δώσω</w></a> σοι</lb>
                     </p>
           			<p>
-                        <lb n="22">τί πράξηις.</sp></lb>
+                        <lb n="22">τί <a href="#" data-toggle="πράξηις" title="δώσω" data-content="Verbo πράττω. 2ª persona del singular. Aoristo de subjuntivo activo."><w>πράξηις</w></a>.</sp></lb>
                     </p>
           			<p>
                         <lb n="23"><sp who="person1">πάντων γὰρ</sp>
@@ -2020,7 +2101,7 @@
                         <lb n="24">τῶν ἀγαθῶν</lb>
                     </p>
           			<p>
-                        <lb n="25">ἄξιος εἶ.</sp></lb>
+                        <lb n="25">ἄξιος <w name="pres">εἶ</w>.</sp></lb>
                     </p>          			
           		</lg>
           	</group>
@@ -2043,7 +2124,7 @@
                         <lb n="4">amantissime.</lb>
                     </p>
           			<p>
-                        <lb n="5">Quomodo</lb>
+                        <lb n="5"><w name="adv">Quomodo</w></lb>
                     </p>
           			<p>
                         <lb n="6">res tuae?</lb>
@@ -2052,19 +2133,19 @@
                         <lb n="7">Omnia bene?</sp></lb>
                     </p>
           			<p>
-                        <lb n="8"><sp who="person2">Quomodo dii</lb>
+                        <lb n="8"><sp who="person2"><w name="adv">Quomodo</w> dii</lb>
                     </p>
           			<p>
                         <lb n="9">volunt.</lb>
                     </p>
           			<p>
-                        <lb n="10">Quid agis?</sp> <sp who="person1">Modo</sp>
+                        <lb n="10">Quid agis?</sp> <sp who="person1"><w name="adv">Modo</w></sp>
                     </p>
           			<p>
                         <lb n="11">agebam,</lb>
                     </p>
           			<p>
-                        <lb n="12">nunc autem</lb>
+                        <lb n="12"><w name="adv">nunc</w> <w name="conj">autem</w></lb>
                     </p>
           			<p>
                         <lb n="13">vacat mihi.</sp></lb>
@@ -2088,7 +2169,7 @@
                         <lb n="19">ambula</lb>
                     </p>
           			<p>
-                        <lb n="20">et ego</lb>
+                        <lb n="20"><w name="conj">et</w> ego</lb>
                     </p>
           			<p>
                         <lb n="21">do tibi</lb>
@@ -2097,7 +2178,7 @@
                         <lb n="22">quid agas.</sp></lb>
                     </p>
           			<p>
-                        <lb n="23"><sp who="person1">Omnium enim</lb>
+                        <lb n="23"><sp who="person1">Omnium <w name="conj">enim</w></lb>
                     </p>
           			<p>
                         <lb n="24">bonorum</lb>

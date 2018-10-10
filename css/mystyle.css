@@ -52,3 +52,6 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 	position: relative;
 	right: 10%;
 }
+span:hover {
+    color: #900C3F;
+}
