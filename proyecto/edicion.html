@@ -32,7 +32,6 @@
             }
             for (var i = 0; i < allParas.length; i++)
                 allParas[i].setAttribute("style", "background-color:" + colorMark + ";");
-
         });
     };
         function palabraslatin() {
@@ -47,66 +46,17 @@
             }
             for (var i = 0; i < allParas.length; i++)
                 allParas[i].setAttribute("style", "background-color:" + colorMark + ";");
-
         });
     };
+    
+     </script>
 
-    function buscador() {
-      var texto = document.getElementById('texto').textContent;
-      var lawword = document.getElementById('lawword').textContent;
-      parser = new DOMParser();
-      xmlDoc1 = parser.parseFromString(texto, "text/xml");
-      xmlDoc2 = parser.parseFromString(lawword, "text/xml");
-      // Obtengo la palabra a buscar
-      var nom = document.getElementById('buscapalabra').value;
-      // Consultas xPath
-      st1 = "//persName[@corresp='#" + nom + "']";
-      st2 = "//person[@id='" + nom + "']//*";
-      var result1 = xmlDoc1.evaluate(st1, xmlDoc1, null, XPathResult.ITERATOR, null);
-      var result2 = xmlDoc2.evaluate(st2, xmlDoc2, null, XPathResult.ITERATOR, null);
-        try {
-          // Se van a iterar los dos nodos
-          var node1 = result1.iterateNext();
-          var node2 = result2.iterateNext();
-          // En infoNode1 guardo la información que obtenga del textoxml (en mi caso text)
-          var infoNode1 = "";
-          // En el array datos guardo la información que obtenga del nombresxml (en mi caso lawword)
-          var i = 0;
-          var datos = [];
-          while (node1) {
-            infoNode1 = node1.textContent.toString();
-            node1 = result1.iterateNext();
-          }
-          while (node2) {
-            // Almaceno en el array datos, los campos necesarios para mostrar la tabla
-            datos[i] = node2.textContent.toString();
-            node2 = result2.iterateNext();
-            i++;
-          }
-          if (infoNode1 != "") {
-            // Creación de la tabla con la información
-            var loadTable = '<table class="table table-bordered"><thead><tr><th>' + "Información de" + " " + infoNode1 + '</th></tr></thead>';
-            for (var i = 0; i < datos.length - 1; i++) {
-              loadTable += '</tr><tr><td width="118">' + datos[i] + '</td>';
-            }
-            loadTable += '</tr></table>';
-            loadTable += "<button type='button' class='btn btn-default'><i class='glyphicon glyphicon-download-alt'></i><a target='_blank' href='" + datos[datos.length - 1] + "'> Descargar esta información</a></button>";
-            //Cargo la tabla
-            document.getElementById('elementoTabla').innerHTML = "";
-            $('#elementoTabla').append(loadTable.valueOf());
-            document.getElementById('elementoTabla').style.visibility = 'visible';
-          } else {
-            alert('Elige una opción válida');
-          }
-        }
-      catch (e) {
-        alert('No se encuentra la palabra');
-        dump('Error: Document tree modified during iteration ' + e);
-      }
-    }
+	<script>
+		var mostrarValor = function(x){
+			alert(+x.options[x.selectedIndex].text);
+		}
+	</script>
 
-
-      </script>
       <style>
         teiHeader, gen, number, case, per, tns, mood, form.hidden {
             visibility: hidden;
@@ -132,7 +82,7 @@
               <edition n="1">Edición digital</edition>
               <author>Cristina Álvarez</author>
               <date>Noviembre 2018</date>
-            <publicationStmt>  
+            <publicationStmt>
               <p>Trabajo realizado como Trabajo Fin de Máster del Máster en Letras Digitales de la UCM
               </p>
               <date when="2018"/>
@@ -140,12 +90,12 @@
             <sourceDesc>
               <p>Se trata de unos textos utilizados en el mundo antiguo para que los latinos aprendieran griego. En concreto en este trabajo se van a ver algunos recientemente encontrados que tratan sobre temas legales.
               </p>
-            </sourceDesc>  
+            </sourceDesc>
             </editionStmt>
           </fileDesc>
         </teiHeader>
-    </head>    
-    <body class="fondo">    
+    </head>
+    <body class="fondo">
       <header>
         <nav class="navbar navbar-inverse barranav" role="navigation">
           <div class="container-fluid">
@@ -185,7 +135,7 @@
             <br>
             <label><input onclick="verbosgriego()" type="checkbox" value="aor">Verbos en aoristo</label>
             <br>
-            <label><input onclick="verbosgriego()" type="checkbox" value="nopers">Formas no personales</label>     
+            <label><input onclick="verbosgriego()" type="checkbox" value="nopers">Formas no personales</label>
         </div>
     </div>
 
@@ -196,37 +146,39 @@
             <br>
             <label><input onclick="palabraslatin()" type="checkbox" value="conj">Conjunciones</label>
             <br>
-            <label><input onclick="palabraslatin()" type="checkbox" value="adv">Adverbios</label>     
+            <label><input onclick="palabraslatin()" type="checkbox" value="adv">Adverbios</label>
         </div>
     </div>
 
-	<div id="custom-search-input">
-		<p> Buscador de palabras jurídicas</p>
-        
-  	  	<div class="input-group col-md-3">
+  <div id="custom-search-input" class=" col-md-3 col-sm-6 col-xs-6">
+    <p>Palabras jurídicas en el texto:</p>
 
-        	<select id="buscapalabra" placeholder="buscar">
-		      <option value="">- - - </option>
-		      <option value="juicio"> Juicio</option>
-		      <option value="jurisdiccion">Jurisdicción</option>
-		      <option value="juez">Juez</option>
-		      <option value="caso">Caso</option>
-		      <option value="declarar">Declarar</option>
-		      <option value="abogado">Abogado</option>
-		      <option value="leyes">Leyes</option>
-		      <option value="veredicto">Veredicto</option>
-		      <option value="procurador">Procurador</option>
-		      <option value="letrado">Letrado</option>
-		    </select>
+        <div class="input-group">
+		<form action="#">	
+          	<select id="buscapalabra" onchange="mostrarValor(this);">
+	          <option value="">- - - </option>
+	          <option value="juicio"> Juicio</option>
+	          <option value="jurisdiccion">Jurisdicción</option>
+	          <option value="juez">Juez</option>
+	          <option value="caso">Caso</option>
+	          <option value="declarar">Declarar</option>
+	          <option value="abogado">Abogado</option>
+	          <option value="leyes">Leyes</option>
+	          <option value="veredicto">Veredicto</option>
+	          <option value="procurador">Procurador</option>
+	          <option value="letrado">Letrado</option>
+        	</select>
+        </form>
 
-        	<span class="input-group-btn">
-     			<button class="btn btn-info btn-xs" onclick="buscador()">
-        		<i class="glyphicon glyphicon-search"></i>
-      			</button>
-    		</span>
+		<!-- <span>	   
+          <button class="btn btn-info btn-xs" style= "margin-left: 8%;">
+            <i class="glyphicon glyphicon-arrow-right"></i>
+          </button>
+        </span> -->  
+ 
+
         </div>
     </div>
-
     </div>
     <br>
 <div class="container">
@@ -247,567 +199,567 @@
           <group lang="greek">
           <h4>Texto en griego</h4>
 
-          <lg n="1" type="parrafo">  
+          <lg n="1" type="parrafo">
             <p>
-            	<lb n="1">
-            		<w>Καὶ</w>
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">nominativo</case>
-            			<w>οἰκοδεσπότης</w>
-            		</gramGrp>
-            	</lb>
+              <lb n="1">
+                <w>Καὶ</w>
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">nominativo</case>
+                  <w>οἰκοδεσπότης</w>
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="2">
-            		<gramGrp type="verbo">
-            			<per class="hidden">impersonal</per>
-            			<tns class="hidden">presente</tns>
-            			<form class="hidden">participio</form><gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">nominativo</case>
-            			<w name="nopers"><a href="#" data-toggle="popover" title="προερχόμενος" data-content="Verbo προέρχομαι. Nominativo Singular Masculino. Participio de presente medio-pasivo.">προερχόμενος</a></w>
-            		</gramGrp>
-            	</lb>
+              <lb n="2">
+                <gramGrp type="verbo">
+                  <per class="hidden">impersonal</per>
+                  <tns class="hidden">presente</tns>
+                  <form class="hidden">participio</form><gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">nominativo</case>
+                  <w name="nopers"><a tabindex="1" data-trigger="focus" data-toggle="popover" title="προερχόμενος" data-content="Verbo προέρχομαι. Nominativo Singular Masculino. Participio de presente medio-pasivo.">προερχόμενος</a></w>
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="3">
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">aoristo</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="aor">ἀπήντησεν</w>
-            		</gramGrp>
-            	</lb>
+              <lb n="3">
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">aoristo</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="aor">ἀπήντησεν</w>
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="4">
-            		<w>τοῦ</w> 
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">genitivo</case>
-            			<w>φίλου</w>
-            		</gramGrp> 
-            		<w>αὐτοῦ</w>
-            	</lb>
+              <lb n="4">
+                <w>τοῦ</w>
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">genitivo</case>
+                  <w>φίλου</w>
+                </gramGrp>
+                <w>αὐτοῦ</w>
+              </lb>
             </p>
             <p>
-            	<lb n="5">
-            		<w>καὶ</w> 
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">aoristo</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="aor">εἶπεν</w>·
-            		</gramGrp> 
-            		<sp who="Lucio"><gramGrp type="verbo">
-            			<per class="hidden">segunda</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">presente</tns>
-            			<mood class="hidden">imperativo</mood>
-            			<w name="pres">Χαῖρε</w>
-            		</gramGrp> 
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">vocativo</case>
-            			<w><persName>Γάϊε</persName></w>,
-            		</gramGrp></sp>
-            	</lb>
+              <lb n="5">
+                <w>καὶ</w>
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">aoristo</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="aor">εἶπεν</w>·
+                </gramGrp>
+                <sp who="Lucio"><gramGrp type="verbo">
+                  <per class="hidden">segunda</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">presente</tns>
+                  <mood class="hidden">imperativo</mood>
+                  <w name="pres">Χαῖρε</w>
+                </gramGrp>
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">vocativo</case>
+                  <w><persName>Γάϊε</persName></w>,
+                </gramGrp></sp>
+              </lb>
             </p>
             <p>
-            	<lb n="6">
-            		<w>καὶ</w>
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">aoristo</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="aor">κατεφίλησεν</w>
-            		</gramGrp>
-            		<w> αὐτόν</w>.
-            	</lb>
+              <lb n="6">
+                <w>καὶ</w>
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">aoristo</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="aor">κατεφίλησεν</w>
+                </gramGrp>
+                <w> αὐτόν</w>.
+              </lb>
             </p>
             <p>
-            	<lb n="7">
-            		<w>καὶ</w> 
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">aoristo</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="aor">ἀντησπάσατο</w>
-            		</gramGrp>
-            		<gramGrp type="verbo">
-            			<per class="hidden">impersonal</per>
-            			<tns class="hidden">presente</tns>
-            			<form class="hidden">participio</form>
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">nominativo</case>
-            			<w name="nopers"><a href="#" data-toggle="popover" title="λέγων" data-content="Verbo λέγω. Nominativo Singular Masculino. Participio de presente activo.">λέγων</a></w>·
-            		</gramGrp>
-            	</lb>
+              <lb n="7">
+                <w>καὶ</w>
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">aoristo</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="aor">ἀντησπάσατο</w>
+                </gramGrp>
+                <gramGrp type="verbo">
+                  <per class="hidden">impersonal</per>
+                  <tns class="hidden">presente</tns>
+                  <form class="hidden">participio</form>
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">nominativo</case>
+                  <w name="nopers"><a tabindex="2" data-trigger="focus" data-toggle="popover" title="λέγων" data-content="Verbo λέγω. Nominativo Singular Masculino. Participio de presente activo.">λέγων</a></w>·
+                </gramGrp>
+              </lb>
             </p>
-          <lg n="2" type="parrafo">  
+          <lg n="2" type="parrafo">
             <br>
             <p>
-            	<lb n="1">
-            		<sp who="Gayo">Καλῶς <gramGrp type="verbo">
-            			<per class="hidden">segunda</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">presente</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="pres">ζήσαις</w>,
-            		</gramGrp> 
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">vocativo</case>
-            			<persName>Λούκιε</persName>·
-            		</gramGrp>
-            	</lb>
+              <lb n="1">
+                <sp who="Gayo">Καλῶς <gramGrp type="verbo">
+                  <per class="hidden">segunda</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">presente</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="pres">ζήσαις</w>,
+                </gramGrp>
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">vocativo</case>
+                  <persName>Λούκιε</persName>·
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="2">
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">presente</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="pres">ἔστιν</w>
-            		</gramGrp> 
-            		σε 
-            		<gramGrp type="verbo">
-            			<per class="hidden">impersonal</per>
-            			<tns class="hidden">aoristo</tns>
-            			<mood class="hidden">infinitivo</mood>
-            			<w name="nopers"><a href="#" data-toggle="popover" title="ἰδεῖν" data-content="Verbo εἶδον. Infinitivo de aoristo activo.">ἰδεῖν</a></w>;
-            		</gramGrp></sp>
-            	</lb>
+              <lb n="2">
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">presente</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="pres">ἔστιν</w>
+                </gramGrp>
+                σε
+                <gramGrp type="verbo">
+                  <per class="hidden">impersonal</per>
+                  <tns class="hidden">aoristo</tns>
+                  <mood class="hidden">infinitivo</mood>
+                  <w name="nopers"><a tabindex="3" data-trigger="focus" data-toggle="popover" title="ἰδεῖν" data-content="Verbo εἶδον. Infinitivo de aoristo activo.">ἰδεῖν</a></w>;
+                </gramGrp></sp>
+              </lb>
             </p>
             <p>
-            	<lb n="3">
-            		<sp who="Lucio">Tί <gramGrp type="verbo">
-            			<per class="hidden">segunda</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">presente</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w name="pres">πράττεις</w>;
-            		</gramGrp></sp>
-            	</lb>
+              <lb n="3">
+                <sp who="Lucio">Tί <gramGrp type="verbo">
+                  <per class="hidden">segunda</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">presente</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w name="pres">πράττεις</w>;
+                </gramGrp></sp>
+              </lb>
             </p>
             <p>
-            	<lb n="4">
-            		<sp who="Gayo">Πάντα ὀρθῶς.
-            	</lb>
-            	</p>
+              <lb n="4">
+                <sp who="Gayo">Πάντα ὀρθῶς.
+              </lb>
+              </p>
             <p>
-            	<lb n="5">
-            		πῶς <w name="pres">ἔχεις</w>;</sp>
-            	</lb>
+              <lb n="5">
+                πῶς <w name="pres">ἔχεις</w>;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="6">
-            		<sp who="Lucio"><w name="pres">Συγχαίρομαί</w> σοι
-            	</lb>
-            	</p>
+              <lb n="6">
+                <sp who="Lucio"><w name="pres">Συγχαίρομαί</w> σοι
+              </lb>
+              </p>
             <p>
-            	<lb n="7">
-            	οὕτως ὡς ἐμοί.
-            	</lb>
+              <lb n="7">
+              οὕτως ὡς ἐμοί.
+              </lb>
             </p>
             <p>
-            	<lb n="8">
-            		(<w name="pres">ἔστιν</w> μοί)
-            	</lb>
+              <lb n="8">
+                (<w name="pres">ἔστιν</w> μοί)
+              </lb>
             </p>
             <p>
-            	<lb n="9">
-            	κριτήριον.</sp>
-            	</lb>
+              <lb n="9">
+              κριτήριον.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="10">
-            		<sp who="Gayo">Πρὸς τίνα;
-            	</lb>
-            	</p>
+              <lb n="10">
+                <sp who="Gayo">Πρὸς τίνα;
+              </lb>
+              </p>
             <p>
-            	<lb n="11">
-            	πρὸς τὸν ταμίαν;</sp>
-            	</lb>
+              <lb n="11">
+              πρὸς τὸν ταμίαν;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="12">
-            		<sp who="Lucio">Οὐκ ἐκεῖ.</sp>
-            	</lb>
+              <lb n="12">
+                <sp who="Lucio">Οὐκ ἐκεῖ.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="13">
-            		<sp who="Gayo">Ἀλλὰ ποῦ;
-            	</lb>
-            	</p>
+              <lb n="13">
+                <sp who="Gayo">Ἀλλὰ ποῦ;
+              </lb>
+              </p>
             <p>
-            	<lb n="14">
-            	πρὸς τὸν ἀνθύπατον;</sp>
-            	</lb>
+              <lb n="14">
+              πρὸς τὸν ἀνθύπατον;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="15">
-            		<sp who="Lucio">Οὐδ᾿ ἐκεῖ,
-            	</lb>
-            	</p>
+              <lb n="15">
+                <sp who="Lucio">Οὐδ᾿ ἐκεῖ,
+              </lb>
+              </p>
             <p>
-            	<lb n="16">
-            	ἀλλὰ πρὸς τοὺς ἄρχοντας
-            	</lb>
+              <lb n="16">
+              ἀλλὰ πρὸς τοὺς ἄρχοντας
+              </lb>
             </p>
             <p>
-            	<lb n="17">
-            	ἐξ ὑπογραφῆς τοῦ διέποντος
-            	</lb>
+              <lb n="17">
+              ἐξ ὑπογραφῆς τοῦ διέποντος
+              </lb>
             </p>
             <p>
-            	<lb n="18">
-            	τὴν ἐπαρχίαν.</sp>
-            	</lb>
+              <lb n="18">
+              τὴν ἐπαρχίαν.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="19">
-            		<sp who="Gayo">Ποταπὸν δ᾿ <w name="pres">ἐστὶν</w>
-            	</lb>
-            	</p>
+              <lb n="19">
+                <sp who="Gayo">Ποταπὸν δ᾿ <w name="pres">ἐστὶν</w>
+              </lb>
+              </p>
             <p>
-            	<lb n="20">
-            	αὐτὸ τὸ πρᾶγμα;</sp>
-            	</lb>
+              <lb n="20">
+              αὐτὸ τὸ πρᾶγμα;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="21">
-            		<sp who="Lucio">Οὐ πάνυ μέγα·
-            	</lb>
-            	</p>
+              <lb n="21">
+                <sp who="Lucio">Οὐ πάνυ μέγα·
+              </lb>
+              </p>
             <p>
-            	<lb n="22">
-            		<w name="pres">ἔστιν</w> γὰρ χρηματικόν,
-            	</lb>
+              <lb n="22">
+                <w name="pres">ἔστιν</w> γὰρ χρηματικόν,
+              </lb>
             </p>
             <p>
-            	<lb n="23">
-            		ἵνα ὅλον <w name="aor">ἴδηις</w>.
-            	</lb>
+              <lb n="23">
+                ἵνα ὅλον <w name="aor">ἴδηις</w>.
+              </lb>
             </p>
             <p>
-            	<lb n="24">
-            		εἰ <w name="pres">σχολάζεις</w> σύ,
-            	</lb>
+              <lb n="24">
+                εἰ <w name="pres">σχολάζεις</w> σύ,
+              </lb>
             </p>
             <p>
-            	<lb n="25">
-            	<w name="aor"><a href="#" data-toggle="popover" title="παρέδρευσον" data-content="Verbo παρεδρεύω. 2ª persona del singular. Aoristo de imperativo.">παρέδρευσον</a></w> ἡμῖν·
-            	</lb>
+              <lb n="25">
+              <w name="aor"><a tabindex="4" data-trigger="focus" data-toggle="popover" title="παρέδρευσον" data-content="Verbo παρεδρεύω. 2ª persona del singular. Aoristo de imperativo.">παρέδρευσον</a></w> ἡμῖν·
+              </lb>
             </p>
             <p>
-            	<lb n="26">
-            	οἱ κριταὶ γὰρ
-            	</lb>
+              <lb n="26">
+              οἱ κριταὶ γὰρ
+              </lb>
             </p>
             <p>
-            	<lb n="27">
-            		ἡμέραν ἡμῖν <w name="aor">ὥρισαν</w>
-            	</lb>
+              <lb n="27">
+                ἡμέραν ἡμῖν <w name="aor">ὥρισαν</w>
+              </lb>
             </p>
             <p>
-            	<lb n="28">
-            	τὴν σήμερον
-            	</lb>
+              <lb n="28">
+              τὴν σήμερον
+              </lb>
             </p>
             <p>
-            	<lb n="29">
-            		ἀπόφασιν <w name="aor">ἐρούμενοι</w>.
-            	</lb>
+              <lb n="29">
+                ἀπόφασιν <w name="aor">ἐρούμενοι</w>.
+              </lb>
             </p>
           </lg>
             <br>
           <lg n="3" type="parrafo">
             <p>
-            	<lb n="1">
-            		διὸ <w name="pres">βούλομαί</w> σου παρόντος
-            	</lb>
+              <lb n="1">
+                διὸ <w name="pres">βούλομαί</w> σου παρόντος
+              </lb>
             </p>
             <p>
-            	<lb n="2">
-            	περὶ τῆς δίκης
-            	</lb>
+              <lb n="2">
+              περὶ τῆς δίκης
+              </lb>
             </p>
             <p>
-            	<lb n="3">
-            	σὺν τοῖς συνηγόροις
-            	</lb>
+              <lb n="3">
+              σὺν τοῖς συνηγόροις
+              </lb>
             </p>
             <p>
-            	<lb n="4">
-            		<w name="nopers"><a href="#" data-toggle="popover" title="σκέψασθαι" data-content="Verbo σκέπτομαι. Infinitivo de aoristo medio-pasivo.">σκέψασθαι</a></w>.</sp>
-            	</lb>
+              <lb n="4">
+                <w name="nopers"><a tabindex="5" data-trigger="focus" data-toggle="popover" title="σκέψασθαι" data-content="Verbo σκέπτομαι. Infinitivo de aoristo medio-pasivo.">σκέψασθαι</a></w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="5">
-            		<sp who="Gayo"><w name="aor">Παρέλαβες</w>;</sp>
-            	</lb>
+              <lb n="5">
+                <sp who="Gayo"><w name="aor">Παρέλαβες</w>;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="6">
-            		<sp who="Lucio"><w name="aor">Παρέλαβον</w>.</sp>
-            	</lb>
+              <lb n="6">
+                <sp who="Lucio"><w name="aor">Παρέλαβον</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="7">
-            		<sp who="Gayo">Τίνας;</sp> <sp who="Lucio">Τοὺς σοὺς φίλους.</sp>
-            	</lb>
+              <lb n="7">
+                <sp who="Gayo">Τίνας;</sp> <sp who="Lucio">Τοὺς σοὺς φίλους.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="8">
-            		<sp who="Gayo">Καλῶς <w name="aor">ἐποίησας</w>.
-            	</lb>
-            	</p>
+              <lb n="8">
+                <sp who="Gayo">Καλῶς <w name="aor">ἐποίησας</w>.
+              </lb>
+              </p>
             <p>
-            	<lb n="9">
-            	Συνετάξω;
-            	</lb>
+              <lb n="9">
+              Συνετάξω;
+              </lb>
             </p>
             <p>
-            	<lb n="10">
-            	περὶ ποίαν ὥραν;
-            	</lb>
+              <lb n="10">
+              περὶ ποίαν ὥραν;
+              </lb>
             </p>
             <p>
-            	<lb n="11">
-            	ἐν ποίωι τόπωι;</sp>
-            	</lb>
+              <lb n="11">
+              ἐν ποίωι τόπωι;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="12">
-            		<sp who="Lucio"><place>᾿Σ τὸ φόρον,
-            	</lb>
-            	</p>
+              <lb n="12">
+                <sp who="Lucio"><place>᾿Σ τὸ φόρον,
+              </lb>
+              </p>
             <p>
-            	<lb n="13">
-            	ἐν τῆι στοᾶι,
-            	</lb>
+              <lb n="13">
+              ἐν τῆι στοᾶι,
+              </lb>
             </p>
             <p>
-            	<lb n="14">
-            		ἐγγὺς <placeName>τῆς στοᾶς
-            	</lb>
-            	</p>
+              <lb n="14">
+                ἐγγὺς <placeName>τῆς στοᾶς
+              </lb>
+              </p>
             <p>
-            	<lb n="15">
-            	τῆς Νίκης</placeName>.</place></sp>
-            	</lb>
+              <lb n="15">
+              τῆς Νίκης</placeName>.</place></sp>
+              </lb>
             </p>
             <p>
-            	<lb n="16">
-            		<sp who="Gayo">Μετ᾿ ὀλίγον ἐκεῖ <w name="pres">ἔρχομαι</w>.</sp>
-            	</lb>
+              <lb n="16">
+                <sp who="Gayo">Μετ᾿ ὀλίγον ἐκεῖ <w name="pres">ἔρχομαι</w>.</sp>
+              </lb>
             </p>
           </lg>
             <br>
           <lg n="4" type="parrafo">
             <p>
-            	<lb n="1">
-            		<sp who="Lucio">Ἀλλὰ <w name="pres">παρακαλῶ</w>, ἐν νῶι <w name="pres">ἔχοις</w>.</sp>
-            	</lb>
+              <lb n="1">
+                <sp who="Lucio">Ἀλλὰ <w name="pres">παρακαλῶ</w>, ἐν νῶι <w name="pres">ἔχοις</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="2">
-            		<sp who="Gayo">Ἀμέριμνος <w name="pres">ἦις</w>·
-            	</lb>
-            	</p>
+              <lb n="2">
+                <sp who="Gayo">Ἀμέριμνος <w name="pres">ἦις</w>·
+              </lb>
+              </p>
             <p>
-            	<lb n="3">
-            	ἐμοὶ <w><a href="#" data-toggle="popover" title="μελήσει" data-content="Verbo μέλω. 3ª persona del singular. Futuro de indicativo activo.">μελήσει</a></w></sp>.
-            	</lb>
+              <lb n="3">
+              ἐμοὶ <w><a tabindex="6" data-trigger="focus" data-toggle="popover" title="μελήσει" data-content="Verbo μέλω. 3ª persona del singular. Futuro de indicativo activo.">μελήσει</a></w></sp>.
+              </lb>
             </p>
             <p>
-            	<lb n="4">
-            		<w name="pres">Ἄγωμεν</w> ἡμεῖς
-            	</lb>
+              <lb n="4">
+                <w name="pres">Ἄγωμεν</w> ἡμεῖς
+              </lb>
             </p>
             <p>
-            	<lb n="5">
-            	πρὸς τὸν τραπεζίτην·
-            	</lb>
+              <lb n="5">
+              πρὸς τὸν τραπεζίτην·
+              </lb>
             </p>
             <p>
-            	<lb n="6">
-            		<w name="aor">λάβωμεν</w> παρ᾿ αὐτοῦ
-            	</lb>
+              <lb n="6">
+                <w name="aor">λάβωμεν</w> παρ᾿ αὐτοῦ
+              </lb>
             </p>
             <p>
-            	<lb n="7">
-            	δηνάρια ἑκατόν·
-            	</lb>
+              <lb n="7">
+              δηνάρια ἑκατόν·
+              </lb>
             </p>
             <p>
-            	<lb n="8">
-            		<w name="aor">δῶμεν</w> δικολόγωι
-            	</lb>
+              <lb n="8">
+                <w name="aor">δῶμεν</w> δικολόγωι
+              </lb>
             </p>
             <p>
-            	<lb n="9">
-            	τιμητικὸν
-            	</lb>
+              <lb n="9">
+              τιμητικὸν
+              </lb>
             </p>
             <p>
-            	<lb n="10">
-            	καὶ τοῖς συνηγόροις
-            	</lb>
+              <lb n="10">
+              καὶ τοῖς συνηγόροις
+              </lb>
             </p>
             <p>
-            	<lb n="11">
-            	καὶ τῶι νομικῶι,
-           		</lb>
+              <lb n="11">
+              καὶ τῶι νομικῶι,
+              </lb>
             </p>
             <p>
-            	<lb n="12">
-            	ἵνα σπουδαιότερον
-            	</lb>
+              <lb n="12">
+              ἵνα σπουδαιότερον
+              </lb>
             </p>
             <p>
-            	<lb n="13">
-            	<w name="aor"><a href="#" data-toggle="popover" title="ἐκδικήσωσιν" data-content="Verbo ἐκδικέω. 3ª persona del plural. Aoristo de subjuntivo activo.">ἐκδικήσωσιν</w></a> ἡμᾶς.
-            	</lb>
+              <lb n="13">
+              <w name="aor"><a tabindex="7" data-trigger="focus" data-toggle="popover" title="ἐκδικήσωσιν" data-content="Verbo ἐκδικέω. 3ª persona del plural. Aoristo de subjuntivo activo.">ἐκδικήσωσιν</w></a> ἡμᾶς.
+              </lb>
             </p>
             <p>
-            	<lb n="14">
-            		Οὗτός <w name="pres">ἐστιν</w>.
-            	</lb>
+              <lb n="14">
+                Οὗτός <w name="pres">ἐστιν</w>.
+              </lb>
             </p>
             <p>
-            	<lb n="15">
-            		<w name="aor">Λαβὲ</w> παρ᾿ αὐτοῦ κέρμα
-            	</lb>
+              <lb n="15">
+                <w name="aor">Λαβὲ</w> παρ᾿ αὐτοῦ κέρμα
+              </lb>
             </p>
             <p>
-            	<lb n="16">
-            		καὶ <w name="pres">ἀκολούθει</w>.
-            	</lb>
+              <lb n="16">
+                καὶ <w name="pres">ἀκολούθει</w>.
+              </lb>
             </p>
             <p>
-            	<lb n="17">
-            		Καθὼς <w name="aor">συνεταξάμεθα</w>,
-            	</lb>
+              <lb n="17">
+                Καθὼς <w name="aor">συνεταξάμεθα</w>,
+              </lb>
             </p>
             <p>
-            	<lb n="18">
-            		<w name="pres">πάρεστιν</w> <persName>Γάϊος</persName>.
-            	</lb>
+              <lb n="18">
+                <w name="pres">πάρεστιν</w> <persName>Γάϊος</persName>.
+              </lb>
             </p>
             <p>
-            	<lb n="19">
-            	<w name="aor"><a href="#" data-toggle="popover" title="συγκαλέσωμεν" data-content="Verbo συγκαλέω. 1ª persona del plural. Aoristo de subjuntivo activo.">συγκαλέσωμεν</w></a> αὐτὸν
-            	</lb>
+              <lb n="19">
+              <w name="aor"><a tabindex="8" data-trigger="focus" data-toggle="popover" title="συγκαλέσωμεν" data-content="Verbo συγκαλέω. 1ª persona del plural. Aoristo de subjuntivo activo.">συγκαλέσωμεν</w></a> αὐτὸν
+              </lb>
             </p>
             <p>
-            	<lb n="20">εἰς τὴν συμβουλήν.
-            	</lb>
+              <lb n="20">εἰς τὴν συμβουλήν.
+              </lb>
             </p>
             <p>
-            	<lb n="21">
-            		<sp who="Lucio">ἐνθάδε <w name="pres">ἔχομεν</w>
-            	</lb>
-            	</p>
+              <lb n="21">
+                <sp who="Lucio">ἐνθάδε <w name="pres">ἔχομεν</w>
+              </lb>
+              </p>
             <p>
-            	<lb n="22">
-            	τὰ ἀσφαλίσματα,</sp>
-            	</lb>
+              <lb n="22">
+              τὰ ἀσφαλίσματα,</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="23">
-            		<sp who="Gayo"><w name="aor">Παρήγγειλας</w> αὐτῶι;</sp>
-            	</lb>
+              <lb n="23">
+                <sp who="Gayo"><w name="aor">Παρήγγειλας</w> αὐτῶι;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="24">
-            		<sp who="Lucio"><w name="aor">Παρήγγειλα</w>.</sp>
-            	</lb>
+              <lb n="24">
+                <sp who="Lucio"><w name="aor">Παρήγγειλα</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="25">
-            		<sp who="Gayo"><w name="aor">Ἐμαρτυροποίησας</w>;</sp>
-            	</lb>
+              <lb n="25">
+                <sp who="Gayo"><w name="aor">Ἐμαρτυροποίησας</w>;</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="26">
-            		<sp who="Lucio"><w name="aor">Ἐμαρτυροποίησα</w>.</sp>
-            	</lb>
+              <lb n="26">
+                <sp who="Lucio"><w name="aor">Ἐμαρτυροποίησα</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="27">
-            		<sp who="Gayo">Ἕτοιμος <w name="pres">ἦις</w>.</sp>
-            	</lb>
+              <lb n="27">
+                <sp who="Gayo">Ἕτοιμος <w name="pres">ἦις</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="28">
-            		<sp who="Lucio">Ἕτοιμός <w name="pres">εἰμι</w>.</sp>
-            	</lb>
+              <lb n="28">
+                <sp who="Lucio">Ἕτοιμός <w name="pres">εἰμι</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="29">
-            		<sp who="Gayo">Καὶ ὁ ἀντίδικος 
-            	</lb>
-            	</p>
+              <lb n="29">
+                <sp who="Gayo">Καὶ ὁ ἀντίδικος
+              </lb>
+              </p>
             <p>
-            	<lb n="30">
-            		<w name="nopers"><a href="#" data-toggle="popover" title="ἐντυχεῖν" data-content="Verbo ἐντυγχάνω. Infinitivo de aoristo activo.">ἐντυχεῖν</a></w> 
-            		<w name="pres">θέλει</w>.</sp>
-            	</lb>
+              <lb n="30">
+                <w name="nopers"><a tabindex="9" data-trigger="focus" data-toggle="popover" title="ἐντυχεῖν" data-content="Verbo ἐντυγχάνω. Infinitivo de aoristo activo.">ἐντυχεῖν</a></w>
+                <w name="pres">θέλει</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="31">
-            		<sp who="Gayo"><w name="aor">Σιώπησον</w>.</sp>
-            	</lb>
+              <lb n="31">
+                <sp who="Gayo"><w name="aor">Σιώπησον</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="32">
-            		<sp who="Lucio"><w name="pres">Σιωπῶ</w>.</sp>
-            	</lb>
+              <lb n="32">
+                <sp who="Lucio"><w name="pres">Σιωπῶ</w>.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="33">
-            		<sp who="Gayo">Σιωπὴν <w name="pres">ἔχετε</w>,
-            	</lb>
-            	</p>
+              <lb n="33">
+                <sp who="Gayo">Σιωπὴν <w name="pres">ἔχετε</w>,
+              </lb>
+              </p>
             <p>
-            	<lb n="34">
-            		<w name="aor">ἀκούσωμεν</w>
-            	</lb>
+              <lb n="34">
+                <w name="aor">ἀκούσωμεν</w>
+              </lb>
             </p>
             <p>
-            	<lb n="35">
-            	τὴν ἀπόφασιν.</sp>
-            	</lb>
+              <lb n="35">
+              τὴν ἀπόφασιν.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="36">
-            		<sp who="Lucio"><w name="aor">ἤκουσας</w>,
-            	</lb>
-            	</p>
+              <lb n="36">
+                <sp who="Lucio"><w name="aor">ἤκουσας</w>,
+              </lb>
+              </p>
             <p>
-            	<lb n="37">
-            		ὅτι <w name="aor">ἐνικήσαμεν</w>,
-            	</lb>
+              <lb n="37">
+                ὅτι <w name="aor">ἐνικήσαμεν</w>,
+              </lb>
             </p>
             <p>
-            	<lb n="38">
-            		<persName>Γάϊε</persName>;</sp>
-            	</lb>
+              <lb n="38">
+                <persName>Γάϊε</persName>;</sp>
+              </lb>
             </p>
-          </lg> 
+          </lg>
           </group>
         </div>
 
@@ -816,1024 +768,1024 @@
             <h4>Texto en latín</h4>
             <lg n="1" type="parrafo">
             <p>
-            	<lb n="1">
-            		<w name="conj">Et</w> 
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">nominativo</case>
-            			<w>pater(familias)</w>
-            		</gramGrp>
-            	</lb>
+              <lb n="1">
+                <w name="conj">Et</w>
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">nominativo</case>
+                  <w>pater(familias)</w>
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="2">
-            		<gramGrp type="verbo">
-            			<per class="hidden">impersonal</per>
-            			<tns class="hidden">presente</tns>
-            			<form class="hidden">participio</form>
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">nominativo</case>
-            			<w>procedens</w>
-            		</gramGrp>
-            	</lb>
+              <lb n="2">
+                <gramGrp type="verbo">
+                  <per class="hidden">impersonal</per>
+                  <tns class="hidden">presente</tns>
+                  <form class="hidden">participio</form>
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">nominativo</case>
+                  <w>procedens</w>
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="3">
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">perfecto</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w>ocurrit</w>
-            		</gramGrp>
-            	</lb>
+              <lb n="3">
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">perfecto</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w>ocurrit</w>
+                </gramGrp>
+              </lb>
             </p>
             <p>
-            	<lb n="4">
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">dativo</case>
-            			<w>amico</w>
-            		</gramGrp> 
-            		<w>suo</w>
-            	</lb>
+              <lb n="4">
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">dativo</case>
+                  <w>amico</w>
+                </gramGrp>
+                <w>suo</w>
+              </lb>
             </p>
             <p>
-            	<lb n="5">
-            		<w name="conj">et</w>
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">perfecto</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w>dixit</w>:
-            		</gramGrp> 
-            		<sp who="Lucio">Ave, 
-            		<gramGrp type="sustantivo">
-            			<gen class="hidden">masculino</gen>
-            			<number class="hidden">singular</number>
-            			<case class="hidden">vocativo</case>
-            			<w><persName>Gaie</persName></w>
-            		</gramGrp>
-            		</sp>
-            	</lb>
+              <lb n="5">
+                <w name="conj">et</w>
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">perfecto</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w>dixit</w>:
+                </gramGrp>
+                <sp who="Lucio">Ave,
+                <gramGrp type="sustantivo">
+                  <gen class="hidden">masculino</gen>
+                  <number class="hidden">singular</number>
+                  <case class="hidden">vocativo</case>
+                  <w><persName>Gaie</persName></w>
+                </gramGrp>
+                </sp>
+              </lb>
             </p>
             <p>
-            	<lb n="6">
-            		<w name="conj">et</w> 
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">perfecto</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w>osculatus est</w>
-            		</gramGrp> 
-            		<w>eum</w>.
-            	</lb>
+              <lb n="6">
+                <w name="conj">et</w>
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">perfecto</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w>osculatus est</w>
+                </gramGrp>
+                <w>eum</w>.
+              </lb>
             </p>
             <p>
-            	<lb n="7">
-            		<w name="conj">et</w> 
-            		<gramGrp type="verbo">
-            			<per class="hidden">tercera</per>
-            			<number class="hidden">singular</number>
-            			<tns class="hidden">perfecto</tns>
-            			<mood class="hidden">indicativo</mood>
-            			<w>resalutavit</w>
-            		</gramGrp> 
-            		<w>dicens</w>:
-            	</lb>
+              <lb n="7">
+                <w name="conj">et</w>
+                <gramGrp type="verbo">
+                  <per class="hidden">tercera</per>
+                  <number class="hidden">singular</number>
+                  <tns class="hidden">perfecto</tns>
+                  <mood class="hidden">indicativo</mood>
+                  <w>resalutavit</w>
+                </gramGrp>
+                <w>dicens</w>:
+              </lb>
             </p>
             </lg>
             <br><br>
             <lg n="2" type="parrafo">
-	            <p>
-	            	<lb n="1">
-	            		<sp who="Gayo"><w name="adv">Bene</w> 
-	            		<gramGrp type="verbo">
-	            			<per class="hidden">tercera</per>
-	            			<number class="hidden">singular</number>
-	            			<tns class="hidden">presente</tns>
-	            			<mood class="hidden">subjuntivo</mood>
-	            			<w>valeas</w>,
-	            		</gramGrp> 
-	            		<gramGrp type="sustantivo">
-	            			<gen class="hidden">masculino</gen>
-	            			<number class="hidden">singular</number>
-	            			<case class="hidden">vocativo</case>
-	            			<w><persName>Lucie</persName></w>
-	            		</gramGrp>;
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="2">
-	            		<gramGrp type="verbo">
-	            			<per class="hidden">tercera</per>
-	            			<number class="hidden">singular</number>
-	            			<tns class="hidden">presente</tns>
-	            			<mood class="hidden">indicativo</mood>
-	            			<w>est</w>
-	            		</gramGrp> 
-	            		<w>te</w>
-	            		<gramGrp type="verbo">
-	            			<per class="hidden">impersonal</per>
-	            			<tns class="hidden">presente</tns>
-	            			<mood class="hidden">infinitivo</mood>
-	            			<w>videre</w>
-	            		</gramGrp>?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="3">
-	            		<sp who="Lucio">Quid 
-	            		<gramGrp type="verbo">
-	            			<per class="hidden">tercera</per>
-	            			<number class="hidden">singular</number>
-	            			<tns class="hidden">presente</tns>
-	            			<mood class="hidden">indicativo</mood>
-	            			<w>agis</w>
-	            		</gramGrp>?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="4">
-	            		<sp who="Gayo">Omnia recte.
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="5">
-	            		<w name="adv">quomodo</w> habes?<sp>
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="6">
-	            		<sp who="Lucio">Gratulor tibi
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="7">
-	            		<w name="adv">sic</w> <w name="adv">quomodo</w> mihi.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="8">
-	            	(est mihi)
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="9">
-	            	iudicium.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="10">
-	            		<sp who="Gayo"><w name="prep">Ad</w> quem?
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="11">
-	            		<w name="prep">ad</w> quaestorem?<sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="12">
-	            		<sp who="Lucio"><w name="adv">Non</w> <w name="adv">ibi</w>.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="13">
-	            		<sp who="Gayo"><w name="conj">Sed</w> <w name="conj">ubi</w>?
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="14">
-	            		<w name="prep">ad</w> proconsulem?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="15">
-	            		<sp who="Lucio"><w name="conj">Nec</w>, <w name="adv">ibi</w>,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="16">
-	            		<w name="conj">sed</w> <w name="prep">ad</w> magistratus
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="17">
-	            		<w name="prep">ex</w> subscriptione praesidis
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="18">
-	            	provinciae.</sp>
-	            </lb>
-	            </p>
-	            <p>
-	            	<lb n="19">
-	            		<sp who="Gayo"><w name="conj">Quale</w> <w name="conj">autem</w> est
-	            		</lb>
-	            	</p>
-	            <p>
-	            	<lb n="20">
-	            	ipsa res?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="21">
-	            		<sp who="Lucio"><w name="adv">Non</w> <w name="adv">valde</w> magnum;
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="22">
-	            		est <w name="conj">enim</w> pecuniarium,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="23">
-	            		<w name="conj">ut</w> omne videas.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="24">
-	            		<w name="conj">si</w> vacat tibi,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="25">
-	            	adesto nobis;
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="26">
-	            		iudices <w name="conj">enim</w>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="27">
-	            	diem nobis dederunt
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="28">
-	            	hodiernam:
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="29">
-	            	sententia dicitur.</sp>
-	            	</lb>
-	            </p>
+              <p>
+                <lb n="1">
+                  <sp who="Gayo"><w name="adv">Bene</w>
+                  <gramGrp type="verbo">
+                    <per class="hidden">tercera</per>
+                    <number class="hidden">singular</number>
+                    <tns class="hidden">presente</tns>
+                    <mood class="hidden">subjuntivo</mood>
+                    <w>valeas</w>,
+                  </gramGrp>
+                  <gramGrp type="sustantivo">
+                    <gen class="hidden">masculino</gen>
+                    <number class="hidden">singular</number>
+                    <case class="hidden">vocativo</case>
+                    <w><persName>Lucie</persName></w>
+                  </gramGrp>;
+                </lb>
+                </p>
+              <p>
+                <lb n="2">
+                  <gramGrp type="verbo">
+                    <per class="hidden">tercera</per>
+                    <number class="hidden">singular</number>
+                    <tns class="hidden">presente</tns>
+                    <mood class="hidden">indicativo</mood>
+                    <w>est</w>
+                  </gramGrp>
+                  <w>te</w>
+                  <gramGrp type="verbo">
+                    <per class="hidden">impersonal</per>
+                    <tns class="hidden">presente</tns>
+                    <mood class="hidden">infinitivo</mood>
+                    <w>videre</w>
+                  </gramGrp>?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="3">
+                  <sp who="Lucio">Quid
+                  <gramGrp type="verbo">
+                    <per class="hidden">tercera</per>
+                    <number class="hidden">singular</number>
+                    <tns class="hidden">presente</tns>
+                    <mood class="hidden">indicativo</mood>
+                    <w>agis</w>
+                  </gramGrp>?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="4">
+                  <sp who="Gayo">Omnia recte.
+                </lb>
+                </p>
+              <p>
+                <lb n="5">
+                  <w name="adv">quomodo</w> habes?<sp>
+                </lb>
+                </p>
+              <p>
+                <lb n="6">
+                  <sp who="Lucio">Gratulor tibi
+                </lb>
+                </p>
+              <p>
+                <lb n="7">
+                  <w name="adv">sic</w> <w name="adv">quomodo</w> mihi.
+                </lb>
+              </p>
+              <p>
+                <lb n="8">
+                (est mihi)
+                </lb>
+              </p>
+              <p>
+                <lb n="9">
+                iudicium.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="10">
+                  <sp who="Gayo"><w name="prep">Ad</w> quem?
+                </lb>
+                </p>
+              <p>
+                <lb n="11">
+                  <w name="prep">ad</w> quaestorem?<sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="12">
+                  <sp who="Lucio"><w name="adv">Non</w> <w name="adv">ibi</w>.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="13">
+                  <sp who="Gayo"><w name="conj">Sed</w> <w name="conj">ubi</w>?
+                </lb>
+              </p>
+              <p>
+                <lb n="14">
+                  <w name="prep">ad</w> proconsulem?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="15">
+                  <sp who="Lucio"><w name="conj">Nec</w>, <w name="adv">ibi</w>,
+                </lb>
+              </p>
+              <p>
+                <lb n="16">
+                  <w name="conj">sed</w> <w name="prep">ad</w> magistratus
+                </lb>
+              </p>
+              <p>
+                <lb n="17">
+                  <w name="prep">ex</w> subscriptione praesidis
+                </lb>
+              </p>
+              <p>
+                <lb n="18">
+                provinciae.</sp>
+              </lb>
+              </p>
+              <p>
+                <lb n="19">
+                  <sp who="Gayo"><w name="conj">Quale</w> <w name="conj">autem</w> est
+                  </lb>
+                </p>
+              <p>
+                <lb n="20">
+                ipsa res?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="21">
+                  <sp who="Lucio"><w name="adv">Non</w> <w name="adv">valde</w> magnum;
+                </lb>
+              </p>
+              <p>
+                <lb n="22">
+                  est <w name="conj">enim</w> pecuniarium,
+                </lb>
+              </p>
+              <p>
+                <lb n="23">
+                  <w name="conj">ut</w> omne videas.
+                </lb>
+              </p>
+              <p>
+                <lb n="24">
+                  <w name="conj">si</w> vacat tibi,
+                </lb>
+              </p>
+              <p>
+                <lb n="25">
+                adesto nobis;
+                </lb>
+              </p>
+              <p>
+                <lb n="26">
+                  iudices <w name="conj">enim</w>
+                </lb>
+              </p>
+              <p>
+                <lb n="27">
+                diem nobis dederunt
+                </lb>
+              </p>
+              <p>
+                <lb n="28">
+                hodiernam:
+                </lb>
+              </p>
+              <p>
+                <lb n="29">
+                sententia dicitur.</sp>
+                </lb>
+              </p>
             </lg>
             <br>
             <lg n="3" type="parrafo">
-	            <p>
-	            	<lb n="1">
-	            		<w name="adv">quare</w> volo te praesente
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="2">
-	            		<w name="prep">de</w> causa
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="3">
-	            		<w name="prep">cum</w> advocatis
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="4">
-	            	tractare.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="5">
-	            		<sp who="Gayo">Adhibuisti?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="6">
-	            		<sp who="Lucio">Adhibui.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="7">
-	            		<sp who="Gayo">Quos?</sp> <sp who="Lucio">Tuos amicos.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="8">
-	            		<sp who="Gayo"><w name="adv">Bene</w> fecisti.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="9">
-	            	Constituisti?
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="10">
-	            		<w name="adv">circa</w> quam horam?
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="11">
-	            		<w name="prep">in</w> quo loco?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="12">
-	            		<sp who="Lucio"><w name="prep">In</w> foro,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="13">
-	            		<w name="prep"><w name="prep">in</w></w> porticu
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="14">
-	            	iuxta stoam
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="15">
-	            	Victoriae.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="16">
-	            		<sp who="Gayo"><w name="prep">Post</w> modicum <w name="adv">ibi</w> venio.</sp>
-	            	</lb>
-	            </p>
+              <p>
+                <lb n="1">
+                  <w name="adv">quare</w> volo te praesente
+                </lb>
+              </p>
+              <p>
+                <lb n="2">
+                  <w name="prep">de</w> causa
+                </lb>
+              </p>
+              <p>
+                <lb n="3">
+                  <w name="prep">cum</w> advocatis
+                </lb>
+              </p>
+              <p>
+                <lb n="4">
+                tractare.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="5">
+                  <sp who="Gayo">Adhibuisti?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="6">
+                  <sp who="Lucio">Adhibui.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="7">
+                  <sp who="Gayo">Quos?</sp> <sp who="Lucio">Tuos amicos.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="8">
+                  <sp who="Gayo"><w name="adv">Bene</w> fecisti.
+                </lb>
+              </p>
+              <p>
+                <lb n="9">
+                Constituisti?
+                </lb>
+              </p>
+              <p>
+                <lb n="10">
+                  <w name="adv">circa</w> quam horam?
+                </lb>
+              </p>
+              <p>
+                <lb n="11">
+                  <w name="prep">in</w> quo loco?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="12">
+                  <sp who="Lucio"><w name="prep">In</w> foro,
+                </lb>
+              </p>
+              <p>
+                <lb n="13">
+                  <w name="prep"><w name="prep">in</w></w> porticu
+                </lb>
+              </p>
+              <p>
+                <lb n="14">
+                iuxta stoam
+                </lb>
+              </p>
+              <p>
+                <lb n="15">
+                Victoriae.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="16">
+                  <sp who="Gayo"><w name="prep">Post</w> modicum <w name="adv">ibi</w> venio.</sp>
+                </lb>
+              </p>
             </lg>
             <br>
             <lg n="4" type="parrafo">
-	            <p>
-	            	<lb n="1">
-	            		<sp who="Lucio"><w name="conj">Sed</w> rogo, <w name="prep">in</w> mente habeas</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="2">
-	            		<sp who="Gayo">Securus esto;
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="3">
-	            	mihi pertinet.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="4">
-	            	Eamus nos
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="5">
-	            		<w name="prep">ad</w> nummularium;
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="6">
-	            		accipiamus <w name="prep">ab</w> eo
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="7">
-	            	denarios centum;
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="8">
-	            	demus causidico
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="9">
-	            	honorarium
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="10">
-	            		<w name="conj">et</w> advocatis
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="11">
-	            		<w name="conj">et</w> iuris peritis,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="12">
-	            		<w name="conj">ut</w> incessanter
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="13">
-	            	defendant nos.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="14">
-	            	Iste est.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="15">
-	            		Accipe <w name="prep">ab</w> eo nummos
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="16">
-	            		<w name="conj">et</w> sequere.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="17">
-	            		<w name="adv">Sicut</w> constituimus,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="18">
-	            		adest <persName>Gaius</persName>.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="19">
-	            	convocemus eum
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="20">
-	            		<w name="prep">in</w> consilium.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="21">
-	            		<sp who="Lucio"><w name="adv">hic</w> habemus
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="22">
-	            	instrumenta.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="23">
-	            		<sp who="Gayo">Denuntiasti illi?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="24">
-	            		<sp who="Lucio">Denuntiavi.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="25">
-	            		<sp who="Gayo">Testatus es?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="26">
-	            		<sp who="Lucio">Testatus sum.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="27">
-	            		<sp who="Gayo">Paratus esto.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="28">
-	            		<sp who="Lucio">Paratus sum.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="29">
-	            		<sp who="Lucio"><w name="conj">Et</w> adversarius
-	            		</lb>
-	            	</p>
-	            <p>
-	            	<lb n="30">
-	            	interpellare vult.
-	           	 	</lb>
-	            </p>
-	            <p>
-	            	<lb n="31">
-	            	Tace.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="32">
-	            		<sp who="Lucio">Taceo.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="33">
-	            		<sp who="Gayo">Silentium habete,
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="34">
-	            	audiamus
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="35">
-	            	sententiam.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="36">
-	            		<sp who="Lucio">audisti,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="37">
-	            		<w name="conj">quia</w> vicimus,
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="38">
-	            		<persName>Gaie</persName>?</sp>
-	            	</lb>
-	            </p>
+              <p>
+                <lb n="1">
+                  <sp who="Lucio"><w name="conj">Sed</w> rogo, <w name="prep">in</w> mente habeas</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="2">
+                  <sp who="Gayo">Securus esto;
+                </lb>
+                </p>
+              <p>
+                <lb n="3">
+                mihi pertinet.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="4">
+                Eamus nos
+                </lb>
+              </p>
+              <p>
+                <lb n="5">
+                  <w name="prep">ad</w> nummularium;
+                </lb>
+              </p>
+              <p>
+                <lb n="6">
+                  accipiamus <w name="prep">ab</w> eo
+                </lb>
+              </p>
+              <p>
+                <lb n="7">
+                denarios centum;
+                </lb>
+              </p>
+              <p>
+                <lb n="8">
+                demus causidico
+                </lb>
+              </p>
+              <p>
+                <lb n="9">
+                honorarium
+                </lb>
+              </p>
+              <p>
+                <lb n="10">
+                  <w name="conj">et</w> advocatis
+                </lb>
+              </p>
+              <p>
+                <lb n="11">
+                  <w name="conj">et</w> iuris peritis,
+                </lb>
+              </p>
+              <p>
+                <lb n="12">
+                  <w name="conj">ut</w> incessanter
+                </lb>
+              </p>
+              <p>
+                <lb n="13">
+                defendant nos.
+                </lb>
+              </p>
+              <p>
+                <lb n="14">
+                Iste est.
+                </lb>
+              </p>
+              <p>
+                <lb n="15">
+                  Accipe <w name="prep">ab</w> eo nummos
+                </lb>
+              </p>
+              <p>
+                <lb n="16">
+                  <w name="conj">et</w> sequere.
+                </lb>
+              </p>
+              <p>
+                <lb n="17">
+                  <w name="adv">Sicut</w> constituimus,
+                </lb>
+              </p>
+              <p>
+                <lb n="18">
+                  adest <persName>Gaius</persName>.
+                </lb>
+              </p>
+              <p>
+                <lb n="19">
+                convocemus eum
+                </lb>
+              </p>
+              <p>
+                <lb n="20">
+                  <w name="prep">in</w> consilium.
+                </lb>
+              </p>
+              <p>
+                <lb n="21">
+                  <sp who="Lucio"><w name="adv">hic</w> habemus
+                </lb>
+                </p>
+              <p>
+                <lb n="22">
+                instrumenta.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="23">
+                  <sp who="Gayo">Denuntiasti illi?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="24">
+                  <sp who="Lucio">Denuntiavi.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="25">
+                  <sp who="Gayo">Testatus es?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="26">
+                  <sp who="Lucio">Testatus sum.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="27">
+                  <sp who="Gayo">Paratus esto.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="28">
+                  <sp who="Lucio">Paratus sum.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="29">
+                  <sp who="Lucio"><w name="conj">Et</w> adversarius
+                  </lb>
+                </p>
+              <p>
+                <lb n="30">
+                interpellare vult.
+                </lb>
+              </p>
+              <p>
+                <lb n="31">
+                Tace.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="32">
+                  <sp who="Lucio">Taceo.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="33">
+                  <sp who="Gayo">Silentium habete,
+                </lb>
+                </p>
+              <p>
+                <lb n="34">
+                audiamus
+                </lb>
+              </p>
+              <p>
+                <lb n="35">
+                sententiam.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="36">
+                  <sp who="Lucio">audisti,
+                </lb>
+              </p>
+              <p>
+                <lb n="37">
+                  <w name="conj">quia</w> vicimus,
+                </lb>
+              </p>
+              <p>
+                <lb n="38">
+                  <persName>Gaie</persName>?</sp>
+                </lb>
+              </p>
             </lg>
           </group>
 
-        </div>      
+        </div>
 
         <div class="col-md-4">
           <group lang="spanish">
             <h4>Traducción</h4>
             <lg n="1" type="parrafo">
-	            <p>
-	            	<lb n="1">
-	            	Y el amo de la casa
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="2">
-	            	acercándose
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="3">
-	            	se encontró
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="4">
-	            	con un amigo suyo
-	           		</lb>
-	            </p>
-	            <p>
-	            	<lb n="5">
-	            		y le dijo: <sp who="Lucio">"¡hola <persName>Gayo</persName>!"</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="6">
-	            	y le dio un beso.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="7">
-	            	Este le devolvió el saludo diciendo:
-	            	</lb>
-	            </p>
+              <p>
+                <lb n="1">
+                Y el amo de la casa
+                </lb>
+              </p>
+              <p>
+                <lb n="2">
+                acercándose
+                </lb>
+              </p>
+              <p>
+                <lb n="3">
+                se encontró
+                </lb>
+              </p>
+              <p>
+                <lb n="4">
+                con un amigo suyo
+                </lb>
+              </p>
+              <p>
+                <lb n="5">
+                  y le dijo: <sp who="Lucio">"¡hola <persName>Gayo</persName>!"</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="6">
+                y le dio un beso.
+                </lb>
+              </p>
+              <p>
+                <lb n="7">
+                Este le devolvió el saludo diciendo:
+                </lb>
+              </p>
             </lg>
             <br><br>
             <lg n="2" type="parrafo">
-	            <p>
-	            	<lb n="1">
-	            		<sp who="Gayo">¡Qué bien estás, <persName>Lucio</persName>!
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="2">
-	            	¿De verdad te estoy viendo?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="3">
-	            		Lucio: <sp who="Lucio">¿Cómo estás?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="4">
-	            		Gayo: <sp who="Gayo">Todo bien, 
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="5">
-	            	¿y tú?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="6">
-	            		L.: <sp who="Lucio">Me alegro por ti
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="7">
-	            	tanto como por mí.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="8">
-	            	Tengo
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="9">
-	            	un <w corresp="juicio">juicio</w>.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="10">
-	            		G.: <sp who="Gayo">¿Contra quién?, 
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="11">
-	            	¿contra el cuestor?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="12">
-	            		L.: <sp who="Lucio">No</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="13">
-	            		G.: <sp who="Gayo">¿Entonces?, 
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="14">
-	            	¿contra el proconsul?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="15">
-	            		L.: <sp who="Lucio">Tampoco,
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="16">
-	            	contra un magistrado
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="17">
-	            		que está fuera de la jurisdicción del juez</span>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="18">
-	            	de la provincia.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="19">
-	            		G.: <sp who="Gayo">¿Y de qué se trata
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="20">
-	            	este caso?<sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="21">
-	            		L.: <sp who="Lucio">No es gran cosa;
-	            	</lb>
-	            	</p>
-	            <p>
-	            	<lb n="22">
-	            	es por un tema de dinero
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="23">
-	            	así que ya ves.
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="24">
-	            	Si tienes un rato
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="25">
-	            	vente con nosotros
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="26">
-	            	que los jueces
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="27">
-	            	nos han citado 
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="28">
-	            	hoy
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="29">
-	            	para declarar.
-	            	</lb>
-	            </p>
+              <p>
+                <lb n="1">
+                  <sp who="Gayo">¡Qué bien estás, <persName>Lucio</persName>!
+                </lb>
+              </p>
+              <p>
+                <lb n="2">
+                ¿De verdad te estoy viendo?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="3">
+                  Lucio: <sp who="Lucio">¿Cómo estás?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="4">
+                  Gayo: <sp who="Gayo">Todo bien,
+                </lb>
+                </p>
+              <p>
+                <lb n="5">
+                ¿y tú?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="6">
+                  L.: <sp who="Lucio">Me alegro por ti
+                </lb>
+              </p>
+              <p>
+                <lb n="7">
+                tanto como por mí.
+                </lb>
+              </p>
+              <p>
+                <lb n="8">
+                Tengo
+                </lb>
+              </p>
+              <p>
+                <lb n="9">
+                un <w corresp="juicio">juicio</w>.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="10">
+                  G.: <sp who="Gayo">¿Contra quién?,
+                </lb>
+              </p>
+              <p>
+                <lb n="11">
+                ¿contra el cuestor?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="12">
+                  L.: <sp who="Lucio">No</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="13">
+                  G.: <sp who="Gayo">¿Entonces?,
+                </lb>
+                </p>
+              <p>
+                <lb n="14">
+                ¿contra el proconsul?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="15">
+                  L.: <sp who="Lucio">Tampoco,
+                </lb>
+                </p>
+              <p>
+                <lb n="16">
+                contra un magistrado
+                </lb>
+              </p>
+              <p>
+                <lb n="17">
+                  que está fuera de la <w corresp="jurisdicción">jurisdicción</w> del juez</span>
+                </lb>
+              </p>
+              <p>
+                <lb n="18">
+                de la provincia.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="19">
+                  G.: <sp who="Gayo">¿Y de qué se trata
+                </lb>
+                </p>
+              <p>
+                <lb n="20">
+                este caso?<sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="21">
+                  L.: <sp who="Lucio">No es gran cosa;
+                </lb>
+                </p>
+              <p>
+                <lb n="22">
+                es por un tema de dinero
+                </lb>
+              </p>
+              <p>
+                <lb n="23">
+                así que ya ves.
+                </lb>
+              </p>
+              <p>
+                <lb n="24">
+                Si tienes un rato
+                </lb>
+              </p>
+              <p>
+                <lb n="25">
+                vente con nosotros
+                </lb>
+              </p>
+              <p>
+                <lb n="26">
+                que los jueces
+                </lb>
+              </p>
+              <p>
+                <lb n="27">
+                nos han citado
+                </lb>
+              </p>
+              <p>
+                <lb n="28">
+                hoy
+                </lb>
+              </p>
+              <p>
+                <lb n="29">
+                para declarar.
+                </lb>
+              </p>
             </lg>
             <br>
             <lg n="3" type="parrafo">
-	            <p>
-	            	<lb n="1">
-	            	Así que quiero que estés presente
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="2">
-	            	para tratar
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="3">
-	            	el caso
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="4">
-	            	junto con mis abogados.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="5">
-	            		G.: <sp who="Gayo">¿Has buscado abogados?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="6">
-	            		L.: <sp who="Lucio">Sí.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="7">
-	            		G.: <sp who="Gayo">¿Quiénes son?</sp> L.: <sp who="Lucio">Tus colegas.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="8">
-	            		G.: <sp who="Gayo">Bien hecho.
-	            		</lb>
-	            	</p>
-	            <p>
-	            	<lb n="9">
-	            	¿Habéis quedado?
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="10">
-	            	¿Alrededor de qué hora y
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="11">
-	            	dónde?</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="12">
-	            		L.: <sp who="Lucio">En el foro, 
-	            		</lb>
-	            	</p>
-	            <p>
-	            	<lb n="13">
-	            	en el pórtico, 
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="14">
-	            	cerca de la puerta
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="15">
-	            	de la Victoria.</sp>
-	            	</lb>
-	            </p>
-	            <p>
-	            	<lb n="16">
-	            		G.: <sp who="Gayo">Vengo en un rato.</sp>
-	            	</lb>
-	            </p>
+              <p>
+                <lb n="1">
+                Así que quiero que estés presente
+                </lb>
+              </p>
+              <p>
+                <lb n="2">
+                para tratar
+                </lb>
+              </p>
+              <p>
+                <lb n="3">
+                el caso
+                </lb>
+              </p>
+              <p>
+                <lb n="4">
+                junto con mis abogados.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="5">
+                  G.: <sp who="Gayo">¿Has buscado abogados?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="6">
+                  L.: <sp who="Lucio">Sí.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="7">
+                  G.: <sp who="Gayo">¿Quiénes son?</sp> L.: <sp who="Lucio">Tus colegas.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="8">
+                  G.: <sp who="Gayo">Bien hecho.
+                  </lb>
+                </p>
+              <p>
+                <lb n="9">
+                ¿Habéis quedado?
+                </lb>
+              </p>
+              <p>
+                <lb n="10">
+                ¿Alrededor de qué hora y
+                </lb>
+              </p>
+              <p>
+                <lb n="11">
+                dónde?</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="12">
+                  L.: <sp who="Lucio">En el foro,
+                  </lb>
+                </p>
+              <p>
+                <lb n="13">
+                en el pórtico,
+                </lb>
+              </p>
+              <p>
+                <lb n="14">
+                cerca de la puerta
+                </lb>
+              </p>
+              <p>
+                <lb n="15">
+                de la Victoria.</sp>
+                </lb>
+              </p>
+              <p>
+                <lb n="16">
+                  G.: <sp who="Gayo">Vengo en un rato.</sp>
+                </lb>
+              </p>
             </lg>
             <br>
             <lb n="4" type="parrafo">
             <p>
-            	<lb n="1">
-            		L.: <sp who="Lucio">Pero por favor, acuérdate.</sp>
-            	</lb>
+              <lb n="1">
+                L.: <sp who="Lucio">Pero por favor, acuérdate.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="2">
-            		G.: <sp who="Gayo">No te preocupes, 
-            	</lb>
+              <lb n="2">
+                G.: <sp who="Gayo">No te preocupes,
+              </lb>
             </p>
             <p>
-            	<lb n="3">
-            	me concierne.</sp>
-            	</lb>
+              <lb n="3">
+              me concierne.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="4">
-            	L.: Vamos
-            	</lb>
+              <lb n="4">
+              L.: Vamos
+              </lb>
             </p>
             <p>
-            	<lb n="5">
-            	al banquero
-            	</lb>
+              <lb n="5">
+              al banquero
+              </lb>
             </p>
             <p>
-            	<lb n="6">
-            	a pedirle
-           	 	</lb>
+              <lb n="6">
+              a pedirle
+              </lb>
             </p>
             <p>
-            	<lb n="7">
-            	cien denarios
-            	</lb>
+              <lb n="7">
+              cien denarios
+              </lb>
             </p>
             <p>
-            	<lb n="7">
-            	y se los damos al abogado defensor
-            	</lb>
+              <lb n="7">
+              y se los damos al abogado defensor
+              </lb>
             </p>
             <p>
-            	<lb n="9">
-            		como un honorario</span>,
-            	</lb>
+              <lb n="9">
+                como un honorario</span>,
+              </lb>
             </p>
             <p>
-            	<lb n="10">
-            	y a nuestros abogados
-            	</lb>
+              <lb n="10">
+              y a nuestros abogados
+              </lb>
             </p>
             <p>
-            	<lb n="11">
-            	y a los expertos en leyes
-            	</lb>
+              <lb n="11">
+              y a los expertos en leyes
+              </lb>
             </p>
             <p>
-            	<lb n="12">
-            	para que nos defiendan
-            	</lb>
+              <lb n="12">
+              para que nos defiendan
+              </lb>
             </p>
             <p>
-            	<lb n="13">
-            	incansablemente.
-            	</lb>
+              <lb n="13">
+              incansablemente.
+              </lb>
             </p>
             <p>
-            	<lb n="14">
-            	Este es.
-            	</lb>
+              <lb n="14">
+              Este es.
+              </lb>
             </p>
             <p>
-            	<lb n="15">
-            	Que te dé las monedas
-            	</lb>
+              <lb n="15">
+              Que te dé las monedas
+              </lb>
             </p>
             <p>
-            	<lb n="16">
-            	y ven conmigo.
-            	</lb>
+              <lb n="16">
+              y ven conmigo.
+              </lb>
             </p>
             <p>
-            	<lb n="17">
-            	Tal y como concretamos,
-            	</lb>
+              <lb n="17">
+              Tal y como concretamos,
+              </lb>
             </p>
             <p>
-            	<lb n="18">
-            		<persName>Gayo</persName> está aquí.
-            	</lb>
+              <lb n="18">
+                <persName>Gayo</persName> está aquí.
+              </lb>
             </p>
             <p>
-            	<lb n="19">
-            	Vamos a traerle
-            	</lb>
+              <lb n="19">
+              Vamos a traerle
+              </lb>
             </p>
             <p>
-            	<lb n="20">
-            	a nuestra conversación.
-            	</lb>
+              <lb n="20">
+              a nuestra conversación.
+              </lb>
             </p>
             <p>
-            	<lb n="21">
-            	Aquí tenemos
-            	</lb>
+              <lb n="21">
+              Aquí tenemos
+              </lb>
             </p>
             <p>
-            	<lb n="22">
-            	la garantía.
-            	</lb>
+              <lb n="22">
+              la garantía.
+              </lb>
             </p>
             <p>
-            	<lb n="23">
-            		<sp who="Gayo">G.: 
-            	</lb>¿Has hecho un juramento?</sp>
+              <lb n="23">
+                <sp who="Gayo">G.:
+              </lb>¿Has hecho un juramento?</sp>
             </p>
             <p>
-            	<lb n="24">
-            		<sp who="Lucio">L.: Sí.</sp>
-            	</lb>
+              <lb n="24">
+                <sp who="Lucio">L.: Sí.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="25">
-            		<sp who="Gayo">G.: ¿Y has declarado?</sp>
-            	</lb>
+              <lb n="25">
+                <sp who="Gayo">G.: ¿Y has declarado?</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="26">
-            		<sp who="Lucio">L.: Sí.</sp>
-            	</lb>
+              <lb n="26">
+                <sp who="Lucio">L.: Sí.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="27">
-            		<sp who="Gayo">G.: Pues prepárate.</sp>
-            	</lb>
+              <lb n="27">
+                <sp who="Gayo">G.: Pues prepárate.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="28">
-            		<sp who="Lucio">L.: Estoy preparado.</sp>
-            	</lb>
+              <lb n="28">
+                <sp who="Lucio">L.: Estoy preparado.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="29">
-            		<sp who="Gayo">G.: Tu adversario
-            	</lb>
-            	</p>
+              <lb n="29">
+                <sp who="Gayo">G.: Tu adversario
+              </lb>
+              </p>
             <p>
-            	<lb n="30">
-            	quiere intervenir.
-            	</lb>
+              <lb n="30">
+              quiere intervenir.
+              </lb>
             </p>
             <p>
-            	<lb n="31">
-            	Calla.</sp>
-            	</lb>
+              <lb n="31">
+              Calla.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="32">
-            		<sp who="Lucio">L.: Estoy callado.</sp>
-            	</lb>
+              <lb n="32">
+                <sp who="Lucio">L.: Estoy callado.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="33">
-            		<sp who="Gayo">G.: Guarda silencio, 
-            	</lb>
-            	</p>
+              <lb n="33">
+                <sp who="Gayo">G.: Guarda silencio,
+              </lb>
+              </p>
             <p>
-            	<lb n="34">
-            	vamos a escuchar
-            	</lb>
+              <lb n="34">
+              vamos a escuchar
+              </lb>
             </p>
             <p>
-            	<lb n="35">
-            	el veredicto.</sp>
-            	</lb>
+              <lb n="35">
+              el veredicto.</sp>
+              </lb>
             </p>
             <p>
-            	<lb n="36">
-            		<sp who="Lucio">L.: ¿Has oído
-            	</lb>
-            	</p>
+              <lb n="36">
+                <sp who="Lucio">L.: ¿Has oído
+              </lb>
+              </p>
             <p>
-            	<lb n="37">
-            	que hemos ganado,
-            	</lb>
+              <lb n="37">
+              que hemos ganado,
+              </lb>
             </p>
             <p>
-            	<lb n="38">
-            		<persName>Gayo</persName>?</sp>
-            	</lb>
+              <lb n="38">
+                <persName>Gayo</persName>?</sp>
+              </lb>
             </p>
         </lg>
-      </div> 
+      </div>
      </group>
      </text>
         </div> <!-- fin primer coloquio -->
@@ -1852,159 +1804,159 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-4">
-          	<group lang="greek">
-	          	<h4>Texto en griego</h4>
-	            <lg n="1" type="parrafo">
-		            <p>
-		            	<lb n="1">
-			            	<w name="pres">Ἐπιθυμῶ</w>
-			            	<w name="nopers">μαθεῖν</w>
-		            	</lb>
-		            </p>
-		            <p>
-		            	<lb n="2">διάλεκτον Ἀττικήν,</lb>
-		            </p>
-		            <p>
-		            	<lb n="3">
-		            		<w name="pres">ἐπιθυμῶ</w> λίαν.
-		            	</lb>
-		            </p>
-		            <p>
-		            	<lb n="4">
-		            		Ὅτι 
-		            		<w name="pres">θέλεις</w>
-		            	</lb>	
-		            </p>
-		            <p>
-		            	<lb n="5">
-		            		ῥήτωρ 
-		            		<w name="nopers">εἶναι</w>
-		            	</lb>
-		            </p>
-		            <p>
-		            	<lb n="6">(δικολόγος,</lb>
-		            </p>
-		            <p>
-		            	<lb n="7">δημηγόρος,</lb>
-		            </p>
-		            <p>
-		            	<lb n="8">συνήγορος,</lb>
-		            </p>
-		            <p>
-		            	<lb n="9">νομικός,</lb>
-		            </p>
-		            <p>
-		            	<lb n="10">νομικός,</lb>
-		            </p>
-		            <p>
-		            	<lb n="11">νομικός,</lb>
-		            </p>
-		            <p>
-		            	<lb n="12">νομικός,</lb>
-		            </p>
-		            <p>
-		            	<lb n="13">παράκλητος).</lb>
-		            </p>
-		        </lg>    
-		    </group>    
+            <group lang="greek">
+              <h4>Texto en griego</h4>
+              <lg n="1" type="parrafo">
+                <p>
+                  <lb n="1">
+                    <w name="pres">Ἐπιθυμῶ</w>
+                    <w name="nopers">μαθεῖν</w>
+                  </lb>
+                </p>
+                <p>
+                  <lb n="2">διάλεκτον Ἀττικήν,</lb>
+                </p>
+                <p>
+                  <lb n="3">
+                    <w name="pres">ἐπιθυμῶ</w> λίαν.
+                  </lb>
+                </p>
+                <p>
+                  <lb n="4">
+                    Ὅτι
+                    <w name="pres">θέλεις</w>
+                  </lb>
+                </p>
+                <p>
+                  <lb n="5">
+                    ῥήτωρ
+                    <w name="nopers">εἶναι</w>
+                  </lb>
+                </p>
+                <p>
+                  <lb n="6">(δικολόγος,</lb>
+                </p>
+                <p>
+                  <lb n="7">δημηγόρος,</lb>
+                </p>
+                <p>
+                  <lb n="8">συνήγορος,</lb>
+                </p>
+                <p>
+                  <lb n="9">νομικός,</lb>
+                </p>
+                <p>
+                  <lb n="10">νομικός,</lb>
+                </p>
+                <p>
+                  <lb n="11">νομικός,</lb>
+                </p>
+                <p>
+                  <lb n="12">νομικός,</lb>
+                </p>
+                <p>
+                  <lb n="13">παράκλητος).</lb>
+                </p>
+            </lg>
+        </group>
           </div> <!-- fin texto griego-->
           <div class="col-md-4">
-          	<group lang="latin">
-	          	<h4>Texto en latín</h4>
-	          	<lg n="1" type="parrafo">
-		            <p>
-		            	<lb n="1">Cupio discere</lb>
-		            </p>
-		            <p>
-		            	<lb n="2">sermonem Atticum,</lb>
-		            </p>
-		            <p>
-		            	<lb n="3">
-		            		cupio 
-		            		<w name="adv">valde</w>.
-		            	</lb>
-		            </p>
-		            <p>
-		            	<lb n="4">
-		            		<w name="conj">Quoniam</w>
-		            		vis
-		            	</lb>
-		            </p>
-		            <p>
-		            	<lb n="5">orator esse</lb>
-		            </p>
-		            <p>
-		            	<lb n="6">(causidicus,</lb>
-		            </p>
-		            <p>
-		            	<lb n="7">dicentarius,</lb>
-		            </p>
-		            <p>
-		            	<lb n="8">actor,</lb>
-		            </p>
-		            <p>
-		            	<lb n="9">iuris studiosus,</lb>
-		            </p>
-		            <p>
-		            	<lb n="10">iuris peritus,</lb>
-		            </p>
-		            <p>
-		            	<lb n="11">iuris consultus,</lb>
-		            </p>
-		            <p>
-		            	<lb n="12">iuris prudens,</lb>
-		            </p>
-		            <p>
-		            	<lb n="13">advocatus.</lb>
-		            </p>
-		        </lg>
-		    </group>    
-          </div> <!-- fin texto latín --> 
+            <group lang="latin">
+              <h4>Texto en latín</h4>
+              <lg n="1" type="parrafo">
+                <p>
+                  <lb n="1">Cupio discere</lb>
+                </p>
+                <p>
+                  <lb n="2">sermonem Atticum,</lb>
+                </p>
+                <p>
+                  <lb n="3">
+                    cupio
+                    <w name="adv">valde</w>.
+                  </lb>
+                </p>
+                <p>
+                  <lb n="4">
+                    <w name="conj">Quoniam</w>
+                    vis
+                  </lb>
+                </p>
+                <p>
+                  <lb n="5">orator esse</lb>
+                </p>
+                <p>
+                  <lb n="6">(causidicus,</lb>
+                </p>
+                <p>
+                  <lb n="7">dicentarius,</lb>
+                </p>
+                <p>
+                  <lb n="8">actor,</lb>
+                </p>
+                <p>
+                  <lb n="9">iuris studiosus,</lb>
+                </p>
+                <p>
+                  <lb n="10">iuris peritus,</lb>
+                </p>
+                <p>
+                  <lb n="11">iuris consultus,</lb>
+                </p>
+                <p>
+                  <lb n="12">iuris prudens,</lb>
+                </p>
+                <p>
+                  <lb n="13">advocatus.</lb>
+                </p>
+            </lg>
+        </group>
+          </div> <!-- fin texto latín -->
           <div class="col-md-4">
-          	<group lang="spanish">
-	          	<h4>Traducción</h4>
-	          	<lg n="1" type="parrafo">
-		            <p>
-		           		<lb n="1">Quiero aprender</lb>
-		        	</p>
-		            <p>
-		            	<lb n="2">el dialecto Ático,</lb>
-		            </p>
-		            <p>
-		            	<lb n="3">lo deseo sobremanera.</lb>
-		            </p>
-		            <p>
-		            	<lb n="4">Desde que quieres</lb>
-		            </p>
-		            <p>
-		            	<lb n="5">ser orador,</lb>
-		            </p>
-		            <p>
-		            	<lb n="6">abogaducho,</lb>
-		            </p>
-		            <p>
-		            	<lb n="7">orador popular,</lb>
-		            </p>
-		            <p>
-		            	<lb n="8">procurador,</lb>
-		            </p>
-		            <p>
-		            	<lb n="9">estudioso de la ley,</lb>
-		            </p>
-		            <p>
-		            	<lb n="10">conocedor de esta;</lb>
-		            </p>
-		            <p>
-		            	<lb n="11">entendido en leyes,</lb>
-		            </p>
-		            <p>
-		            	<lb n="12">un letrado competente,</lb>
-		            </p>
-		            <p>
-		            	<lb n="13">en fin, abogado...</lb>
-		            </p>
-		        </lg>    
-		    </group>    
+            <group lang="spanish">
+              <h4>Traducción</h4>
+              <lg n="1" type="parrafo">
+                <p>
+                  <lb n="1">Quiero aprender</lb>
+              </p>
+                <p>
+                  <lb n="2">el dialecto Ático,</lb>
+                </p>
+                <p>
+                  <lb n="3">lo deseo sobremanera.</lb>
+                </p>
+                <p>
+                  <lb n="4">Desde que quieres</lb>
+                </p>
+                <p>
+                  <lb n="5">ser orador,</lb>
+                </p>
+                <p>
+                  <lb n="6">abogaducho,</lb>
+                </p>
+                <p>
+                  <lb n="7">orador popular,</lb>
+                </p>
+                <p>
+                  <lb n="8">procurador,</lb>
+                </p>
+                <p>
+                  <lb n="9">estudioso de la ley,</lb>
+                </p>
+                <p>
+                  <lb n="10">conocedor de esta;</lb>
+                </p>
+                <p>
+                  <lb n="11">entendido en leyes,</lb>
+                </p>
+                <p>
+                  <lb n="12">un letrado competente,</lb>
+                </p>
+                <p>
+                  <lb n="13">en fin, abogado...</lb>
+                </p>
+            </lg>
+        </group>
           </div> <!-- fin traducción -->
 
         </div>  <!-- fin row -->
@@ -2021,261 +1973,261 @@
 
     <div id="collapse3" class="panel-collapse collapse">
       <div class="panel-body">
-      	<div class="row">
+        <div class="row">
           <div class="col-md-4">
-          	<group lang="greek">
-          		<lg n="1" type="parrafo">
-          			<h4>Texto en griego</h4>
-          			<p>
+            <group lang="greek">
+              <lg n="1" type="parrafo">
+                <h4>Texto en griego</h4>
+                <p>
                         <lb n="1"><sp who="person1">Κύριε,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="2">
-                        	<w name="pres">χαῖρε</w>,
+                          <w name="pres">χαῖρε</w>,
                         </lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="3"><w name="aor">σωθείης</w> ἀεί,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="4">προσφίλτατε.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="5">πῶς</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="6">τὰ πράγματά σου;</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="7">πάντα καλῶς;</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="8"><sp who="person2">Ὡς οἱ θεοὶ</sp>
                     </p>
-          			<p>
+                <p>
                         <lb n="9"><w name="pres">θέλουσιν</w>.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="10">Τί <w name="pres">πράττεις</w>;</sp> <sp who="person1">Nῦν</lb>
                     </p>
-          			<p>
-                        <lb n="11"><a href="#" data-toggle="popover" title="ἔπραττον" data-content="Verbo πράσσω. 1ª persona del singular. Imperfecto de indicativo activo."><w>ἔπραττον</w></a>,</lb>
+                <p>
+                        <lb n="11"><a tabindex="10" data-trigger="focus" data-toggle="popover" title="ἔπραττον" data-content="Verbo πράσσω. 1ª persona del singular. Imperfecto de indicativo activo."><w>ἔπραττον</w></a>,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="12">νῦν δὲ</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="13"><w name="pres">σχολάζομαι</w>.</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="14"><sp who="person2"><w name="pres">Θέλω</w> σοι</sp>
                     </p>
-          			<p>
+                <p>
                         <lb n="15"><w name="nopers">ἐγχειρίσαι</w></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="16">τὴν διοίκησιν</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="17">τῆς ἐμῆς πράξεως.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="18"><w name="pres">ἄγωμεν</w>.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="19"><w name="pres">περιπάτει</w></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="20">καὶ ἐγὼ</lb>
                     </p>
-          			<p>
-                        <lb n="21"><a href="#" data-toggle="popover" title="δώσω" data-content="Verbo δίδωμι. 1ª persona del singular. Futuro de indicativo activo."><w>δώσω</w></a> σοι</lb>
+                <p>
+                        <lb n="21"><a tabindex="11" data-trigger="focus" data-toggle="popover" title="δώσω" data-content="Verbo δίδωμι. 1ª persona del singular. Futuro de indicativo activo."><w>δώσω</w></a> σοι</lb>
                     </p>
-          			<p>
-                        <lb n="22">τί <a href="#" data-toggle="πράξηις" title="δώσω" data-content="Verbo πράττω. 2ª persona del singular. Aoristo de subjuntivo activo."><w>πράξηις</w></a>.</sp></lb>
+                <p>
+                        <lb n="22">τί <a tabindex="12" data-trigger="focus" data-toggle="popover" title="πράξηις" data-content="Verbo πράττω. 2ª persona del singular. Aoristo de subjuntivo activo."><w>πράξηις</w></a>.</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="23"><sp who="person1">πάντων γὰρ</sp>
                     </p>
-          			<p>
+                <p>
                         <lb n="24">τῶν ἀγαθῶν</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="25">ἄξιος <w name="pres">εἶ</w>.</sp></lb>
-                    </p>          			
-          		</lg>
-          	</group>
+                    </p>
+              </lg>
+            </group>
           </div> <!-- fin texto griego-->
 
           <div class="col-md-4">
-          	<group lang="latin">
-          		<lg n="1" type="parrafo">
-          			<h4>Texto en latín</h4>
-          			<p>
+            <group lang="latin">
+              <lg n="1" type="parrafo">
+                <h4>Texto en latín</h4>
+                <p>
                         <lb n="1"><sp who="person1">Domine,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="2">salve.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="3">Salvus sis semper,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="4">amantissime.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="5"><w name="adv">Quomodo</w></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="6">res tuae?</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="7">Omnia bene?</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="8"><sp who="person2"><w name="adv">Quomodo</w> dii</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="9">volunt.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="10">Quid agis?</sp> <sp who="person1"><w name="adv">Modo</w></sp>
                     </p>
-          			<p>
+                <p>
                         <lb n="11">agebam,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="12"><w name="adv">nunc</w> <w name="conj">autem</w></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="13">vacat mihi.</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="14"><sp who="person2">Volo tibi</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="15">iniungere</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="16">administrationem</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="17">meae actionis.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="18">Eamus;</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="19">ambula</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="20"><w name="conj">et</w> ego</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="21">do tibi</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="22">quid agas.</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="23"><sp who="person1">Omnium <w name="conj">enim</w></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="24">bonorum</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="25">dignus es.</sp></lb>
                     </p>
-          			
-          		</lg>
-          	</group>
 
-          </div> <!-- fin teto latín -->  
+              </lg>
+            </group>
+
+          </div> <!-- fin teto latín -->
 
           <div class="col-md-4">
-          	<group lang="spanish">
-          		<lg n="1" type="parrafo">
-          			<h4>Traducción</h4>
-          			<p>
+            <group lang="spanish">
+              <lg n="1" type="parrafo">
+                <h4>Traducción</h4>
+                <p>
                         <lb n="1"><sp who="person1">- Señor,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="2">¡hola!</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="3">Espero que estés siempre bien,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="4">queridísmo.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="5">¿Cómo</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="6">van tus asuntos?</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="7">¿Todo bien?</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="8"><sp who="person2">- Como los dioses</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="9">lo desean.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="10">¿Cómo estás tú?</sp><sp who="person1"> - Hasta hace poco</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="11">hacía varias cosas,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="12">pero ahora</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="13">estoy ocioso.</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="14"><sp who="person2">- Me gustaría</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="15">ofrecerte</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="16">la gestión</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="17">de mi juicio.</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="18">Vamos,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="19">demos un paseo</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="20">y te</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="21">contaré</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="22">qué tienes que hacer.</sp></lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="23"><sp who="person1">- Claro,</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="24">te mereces todo</lb>
                     </p>
-          			<p>
+                <p>
                         <lb n="25">lo bueno.</sp></lb>
                     </p>
-          		</lg>
-          	</group>
+              </lg>
+            </group>
 
-          </div> <!-- fin traduccion --> 
-          
+          </div> <!-- fin traduccion -->
+
         </div> <!-- fin row-->
 
       </div> <!-- fin panel-body-->
@@ -2285,10 +2237,9 @@
 
 
 
-      </div> 
-       
-      </div> <!--/container--> 
-     
+      </div>
+
+      </div> <!--/container-->
+
     </body>
   </html>
-
