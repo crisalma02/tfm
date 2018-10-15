@@ -31,10 +31,12 @@ def enlazar(orig, links, dicc, post, finales):
                         sig = siguiente_letra(linea, i + 1, finales)
                         pal_bus = pal_apostrofe(mi_pal, sig)
                         pal_orig = pal_original(mi_pal, sig)
+                        # Nos aseguramos de no volver a poner ᾿Σ
+                        if mi_pal == "":
+                            i = i + 1
                         mi_pal = "<a target=\"_blank\" href=\"" + dicc + pal_bus + post + "\">" +  pal_orig + "</a>"
                         f2.write(mi_pal)
                         mi_pal = ""
-                        f2.write(letra)
                     # En caso de encontrar un paréntesis de inicio simplemente lo saltamos.
                     elif letra == "(":
                         mi_pal = ""
