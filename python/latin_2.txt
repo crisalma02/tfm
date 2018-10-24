@@ -1,0 +1,14 @@
+            <p>Cupio discere</p>
+            <p>sermonem Atticum,</p>
+            <p>cupio valde.</p>
+            <p>Quoniam vis</p>
+            <p>orator esse</p>
+            <p>(causidicus,</p>
+            <p>dicentarius,</p>
+            <p>actor,</p>
+            <p>iuris studiosus,</p>
+            <p>iuris peritus,</p>
+            <p>iuris consultus,</p>
+            <p>iuris prudens,</p>
+            <p>advocatus.</p>
+          </div> <!-- fin texto latín -->

@@ -40,6 +40,7 @@ def enlazar(orig, links, dicc, post, finales):
                     # En caso de encontrar un paréntesis de inicio simplemente lo saltamos.
                     elif letra == "(":
                         mi_pal = ""
+                        f2.write(letra)
                     # Si la letra está en la lista de posibles finales de palabra creamos un link
                     elif letra in finales:
                         if mi_pal != "":
@@ -97,7 +98,11 @@ def pal_original(pal, sig):
 
 # Uso
 finales = [" ", ",", ".", "·", ")", ";", "\n", "?"]
-enlazar("griego.txt", "griego_links.txt", "http://logeion.uchicago.edu/index.html#", "", finales)
-# enlazar("latin.txt", "latin_links.txt", "http://www.perseus.tufts.edu/hopper/morph?l=", "&la=la", finales)
+enlazar("griego_1.txt", "griego_links_1.txt", "http://logeion.uchicago.edu/index.html#", "", finales)
+enlazar("griego_2.txt", "griego_links_2.txt", "http://logeion.uchicago.edu/index.html#", "", finales)
+enlazar("griego_3.txt", "griego_links_3.txt", "http://logeion.uchicago.edu/index.html#", "", finales)
+enlazar("latin_1.txt", "latin_links_1.txt", "http://www.perseus.tufts.edu/hopper/morph?l=", "&la=la", finales)
+enlazar("latin_2.txt", "latin_links_2.txt", "http://www.perseus.tufts.edu/hopper/morph?l=", "&la=la", finales)
+enlazar("latin_3.txt", "latin_links_3.txt", "http://www.perseus.tufts.edu/hopper/morph?l=", "&la=la", finales)
 
 # http://logeion.uchicago.edu/index.html#παρ᾿

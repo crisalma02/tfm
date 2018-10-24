@@ -1,0 +1,26 @@
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Domine&la=la">Domine</a>, </p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=salve&la=la">salve</a>.</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Salvus&la=la">Salvus</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=sis&la=la">sis</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=semper&la=la">semper</a>,</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=amantissime&la=la">amantissime</a>.</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Quomodo&la=la">Quomodo</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=res&la=la">res</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=tuae&la=la">tuae</a>?</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Omnia&la=la">Omnia</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=bene&la=la">bene</a>?</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Quomodo&la=la">Quomodo</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dii&la=la">dii</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=volunt&la=la">volunt</a>.</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Quid&la=la">Quid</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=agis&la=la">agis</a>? <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Modo&la=la">Modo</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=agebam&la=la">agebam</a>,</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=nunc&la=la">nunc</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=autem&la=la">autem</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=vacat&la=la">vacat</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=mihi&la=la">mihi</a>.</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Volo&la=la">Volo</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=tibi&la=la">tibi</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=iniungere&la=la">iniungere</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=administrationem&la=la">administrationem</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=meae&la=la">meae</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=actionis&la=la">actionis</a>.</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Eamus&la=la">Eamus</a>;</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=ambula&la=la">ambula</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=ego&la=la">ego</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=do&la=la">do</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=tibi&la=la">tibi</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=quid&la=la">quid</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=agas&la=la">agas</a>.</p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Omnium&la=la">Omnium</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=enim&la=la">enim</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=bonorum&la=la">bonorum</a></p>
+                <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dignus&la=la">dignus</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=es&la=la">es</a>.</p>
+          </div> <!-- fin texto latín -->
