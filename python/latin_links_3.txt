@@ -24,3 +24,4 @@
                 <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=bonorum&la=la">bonorum</a></p>
                 <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dignus&la=la">dignus</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=es&la=la">es</a>.</p>
           </div> <!-- fin texto latín -->
+

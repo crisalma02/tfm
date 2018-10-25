@@ -1,5 +1,7 @@
 
+
             <p><a target="_blank" href="http://logeion.uchicago.edu/ἐπιθυμέω">Ἐπιθυμῶ</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#μαθεῖν">μαθεῖν</a></p>
+            <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#Ἐπιθυμῶ">Ἐπιθυμῶ</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#μαθεῖν">μαθεῖν</a></p>
             <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#διάλεκτον">διάλεκτον</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#Ἀττικήν">Ἀττικήν</a>,</p>
             <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#ἐπιθυμῶ">ἐπιθυμῶ</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#λίαν">λίαν</a>.</p>
             <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#Ὅτι">Ὅτι</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#θέλεις">θέλεις</a></p>

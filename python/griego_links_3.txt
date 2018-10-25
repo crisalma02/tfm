@@ -1,0 +1,26 @@
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#Κύριε">Κύριε</a>,</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#χαῖρε">χαῖρε</a>,</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#σωθείης">σωθείης</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#ἀεί">ἀεί</a>,</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#προσφίλτατε">προσφίλτατε</a>.</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#πῶς">πῶς</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#τὰ">τὰ</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#πράγματά">πράγματά</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#σου">σου</a>;</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#πάντα">πάντα</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#καλῶς">καλῶς</a>;</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#Ὡς">Ὡς</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#οἱ">οἱ</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#θεοὶ">θεοὶ</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#θέλουσιν">θέλουσιν</a>.</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#Τί">Τί</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#πράττεις">πράττεις</a>; <a target="_blank" href="http://logeion.uchicago.edu/index.html#Nῦν">Nῦν</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#ἔπραττον">ἔπραττον</a>,</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#νῦν">νῦν</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#δὲ">δὲ</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#σχολάζομαι">σχολάζομαι</a>.</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#Θέλω">Θέλω</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#σοι">σοι</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#ἐγχειρίσαι">ἐγχειρίσαι</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#τὴν">τὴν</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#διοίκησιν">διοίκησιν</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#τῆς">τῆς</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#ἐμῆς">ἐμῆς</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#πράξεως">πράξεως</a>.</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#ἄγωμεν">ἄγωμεν</a>.</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#περιπάτει">περιπάτει</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#καὶ">καὶ</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#ἐγὼ">ἐγὼ</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#δώσω">δώσω</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#σοι">σοι</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#τί">τί</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#πράξηις">πράξηις</a>.</p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#πάντων">πάντων</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#γὰρ">γὰρ</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#τῶν">τῶν</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#ἀγαθῶν">ἀγαθῶν</a></p>
+                <p><a target="_blank" href="http://logeion.uchicago.edu/index.html#ἄξιος">ἄξιος</a> <a target="_blank" href="http://logeion.uchicago.edu/index.html#εἶ">εἶ</a>.</p>
+          </div> <!-- fin texto griego-->

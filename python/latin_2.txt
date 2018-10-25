@@ -12,3 +12,4 @@
             <p>iuris prudens,</p>
             <p>advocatus.</p>
           </div> <!-- fin texto latín -->
+
