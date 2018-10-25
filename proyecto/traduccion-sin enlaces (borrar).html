@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>E-Hermeneumata</title>
+      <meta charset="utf-8" lang="es">
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+      <link rel="stylesheet" href="../css/bootstrap.css">
+      <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+      <link rel="shortcut icon" type="png" href="img/favicon.png">
+      <link rel="stylesheet" href="../css/mystyle.css">
+      <link rel="stylesheet" href="../font-awesome/css/fontawesome.css">
+      <link rel="stylesheet" href="../font-awesome/css/fontawesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+      <script>
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+        $(function () {
+          $('[data-toggle="popover"]').popover()
+        })
+      </script>
+      <style>
+        teiHeader, gen, number, case, per, tns, mood, form.hidden {
+            visibility: hidden;
+        }
+      </style>
+
+      <!-- SlidesJS Required (if responsive): Sets the page width to the device width. -->
+      <meta name="viewport" content="width=device-width">
+      <!-- End SlidesJS Required -->
+
+      <!-- CSS for slidesjs.com example -->
+      <link rel="stylesheet" href="../css/example.css">
+      <link rel="stylesheet" href="../css/font-awesome.min.css">
+      <!-- End CSS for slidesjs.com example -->
+      <teiHeader class="hidden">
+          <fileDesc>
+            <titleStmt>
+              <title><em>Colloquia de los Hermeneumata Pseudodositheana</em></title>
+              <editor>Eleanor Dickey</editor>
+              <sponsor>Departamento de Clásicas, Universidad de Reading, Inglaterra</sponsor>
+            </titleStmt>
+            <editionStmt>
+              <edition n="1">Edición digital</edition>
+              <author>Cristina Álvarez</author>
+              <date>Noviembre 2018</date>
+            <publicationStmt>  
+              <p>Trabajo realizado como Trabajo Fin de Máster del Máster en Letras Digitales de la UCM</p>
+              <date when="2018"/>
+            </publicationStmt>
+            <sourceDesc>
+              <p>Se trata de unos textos utilizados en el mundo antiguo para que los latinos aprendieran griego. En concreto en este trabajo se van a ver algunos recientemente encontrados que tratan sobre temas legales.</p>
+            </sourceDesc>  
+            </editionStmt>
+          </fileDesc>
+        </teiHeader>
+    </head>
+
+    <body class="fondo">    
+      <header>
+        <nav class="navbar navbar-inverse barranav" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Desplegar navegación</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">Menú principal</a>-->
+                <div id="navbar-ex1-collapse" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="intro.html">Introducción</a></li>
+                    <li><a href="actualidad.html">Actualidad</a></li>
+                    <li><a href="rosetta.html">Piedra Rosetta</a></li>
+                    <li class="dropdown active">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edición Digital<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="traduccion.html">Edición y Traducción</a></li>
+                        <li><a href="edicion.html">Edición enriquecida</a></li>
+                      </ul>
+                    </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="container">
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        <em>Colloquia Monacensia Einsidlensia</em></a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <div class="row">
+        <div class="col-md-4">
+          
+          <h4>Texto en griego</h4>
+
+          <p>Καὶ οἰκοδεσπότης</p>
+          <p>προερχόμενος</p>
+          <p>ἀπήντησεν</p>
+          <p>τοῦ φίλου αὐτοῦ</p>
+          <p>καὶ εἶπεν· Χαῖρε Γάϊε,</p>
+          <p>καὶ κατεφίλησεν αὐτόν.</p>
+          <p>καὶ ἀντησπάσατο λέγων·</p>
+          <br>
+          <p>Καλῶς ζήσαις, Λούκιε·</p>
+          <p>ἔστιν σε ἰδεῖν;</p>
+          <p>Tί πράττεις;</p>
+          <p>Πάντα ὀρθῶς.</p>
+          <p>πῶς ἔχεις;</p>
+          <p>Συγχαίρομαί σοι</p>
+          <p>οὕτως ὡς ἐμοί.</p>
+          <p>(ἔστιν μοί)</p>
+          <p>κριτήριον.</p>
+          <p>Πρὸς τίνα;</p>
+          <p>πρὸς τὸν ταμίαν; </p>
+          <p>Οὐκ ἐκεῖ.</p>
+          <p>Ἀλλὰ ποῦ;</p>
+          <p>πρὸς τὸν ἀνθύπατον;</p>
+          <p>Οὐδ᾿ ἐκεῖ,</p>
+          <p>ἀλλὰ πρὸς τοὺς ἄρχοντας</p>
+          <p>ἐξ ὑπογραφῆς τοῦ διέποντος</p>
+          <p>τὴν ἐπαρχίαν.</p>
+          <p>Ποταπὸν δ᾿ ἐστὶν</p>
+          <p>αὐτὸ τὸ πρᾶγμα;</p>
+          <p>Οὐ πάνυ μέγα·</p>
+          <p>ἔστιν γὰρ χρηματικόν,</p>
+          <p>ἵνα ὅλον ἴδηις.</p>
+          <p>εἰ σχολάζεις σύ,</p>
+          <p>παρέδρευσον ἡμῖν·</p>
+          <p>οἱ κριταὶ γὰρ</p>
+          <p>ἡμέραν ἡμῖν ὥρισαν</p>
+          <p>τὴν σήμερον</p>
+          <p>ἀπόφασιν ἐρούμενοι.</p>
+          <br>
+          <p>διὸ βούλομαί σου παρόντος</p>
+          <p>περὶ τῆς δίκης</p>
+          <p>σὺν τοῖς συνηγόροις</p>
+          <p>σκέψασθαι.</p>
+          <p>Παρέλαβες;</p>
+          <p>Παρέλαβον.</p>
+          <p>Τίνας; Τοὺς σοὺς φίλους.</p>
+          <p>Καλῶς ἐποίησας.</p>
+          <p>Συνετάξω;</p>
+          <p>περὶ ποίαν ὥραν;</p>
+          <p>ἐν ποίωι τόπωι;</p>
+          <p>᾿Σ τὸ φόρον,</p>
+          <p>ἐν τῆι στοᾶι,</p>
+          <p>ἐγγὺς τῆς στοᾶς</p>
+          <p>τῆς Νίκης.</p>
+          <p>Μετ᾿ ὀλίγον ἐκεῖ ἔρχομαι.</p>
+          <br>
+          <p>Ἀλλὰ παρακαλῶ, ἐν νῶι ἔχοις.</p>
+          <p>Ἀμέριμνος ἦις·</p>
+          <p>ἐμοὶ μελήσει.</p>
+          <p>Ἄγωμεν ἡμεῖς</p>
+          <p>πρὸς τὸν τραπεζίτην·</p>
+          <p>λάβωμεν παρ᾿ αὐτοῦ</p>
+          <p>δηνάρια ἑκατόν·</p>
+          <p>δῶμεν δικολόγωι</p>
+          <p>τιμητικὸν</p>
+          <p>καὶ τοῖς συνηγόροις</p>
+          <p>καὶ τῶι νομικῶι,</p>
+          <p>ἵνα σπουδαιότερον</p>
+          <p>ἐκδικήσωσιν ἡμᾶς.</p>
+          <p>Οὗτός ἐστιν.</p>
+          <p>Λαβὲ παρ᾿ αὐτοῦ κέρμα</p>
+          <p>καὶ ἀκολούθει.</p>
+          <p>Καθὼς συνεταξάμεθα,</p>
+          <p>πάρεστιν Γάϊος.</p>
+          <p>συγκαλέσωμεν αὐτὸν</p>
+          <p>εἰς τὴν συμβουλήν.</p>
+          <p>ἐνθάδε ἔχομεν</p>
+          <p>τὰ ἀσφαλίσματα,</p>
+          <p>Παρήγγειλας αὐτῶι;</p>
+          <p>Παρήγγειλα.</p>
+          <p>Ἐμαρτυροποίησας;</p>
+          <p>Ἐμαρτυροποίησα.</p>
+          <p>Ἕτοιμος ἦις.</p>
+          <p>Ἕτοιμός εἰμι.</p>
+          <p>Καὶ ὁ ἀντίδικος </p>
+          <p>ἐντυχεῖν θέλει.</p>
+          <p>Σιώπησον.</p>
+          <p>Σιωπῶ.</p>
+          <p>Σιωπὴν ἔχετε,</p>
+          <p>ἀκούσωμεν</p>
+          <p>τὴν ἀπόφασιν.</p>
+          <p>ἤκουσας,</p>
+          <p>ὅτι ἐνικήσαμεν,</p>
+          <p>Γάϊε;</p>
+        </div>
+
+        <div class="col-md-4">
+
+          <h4>Texto en latín</h4>
+
+          <p>Et pater(familias)</p>
+          <p>procedens</p>
+          <p>ocurrit</p>
+          <p>amico suo</p>
+          <p>et dixit: Ave, Gaie</p>
+          <p>et osculatus est eum.</p>
+          <p>et resalutavit dicens:</p>
+          <br>
+          <p>Bene valeas, Lucie;</p>
+          <p>est te videre?</p>
+          <p>Quid agis?</p>
+          <p>Omnia recte.</p>
+          <p>quomodo habes?</p>
+          <p>Gratulor tibi</p>
+          <p>sic quomodo mihi.</p>
+          <p>(est mihi)</p>
+          <p>iudicium.</p>
+          <p>Ad quem?</p>
+          <p>ad quaestorem?</p>
+          <p>Non ibi.</p>
+          <p>Sed ubi?</p>
+          <p>ad proconsulem?</p>
+          <p>Nec, ibi,</p>
+          <p>sed ad magistratus</p>
+          <p>ex subscriptione praesidis</p>
+          <p>provinciae.</p>
+          <p>Quale autem est</p>
+          <p>ipsa res?</p>
+          <p>Non valde magnum;</p>
+          <p>est enim pecuniarium,</p>
+          <p>ut omne videas.</p>
+          <p>si vacat tibi,</p>
+          <p>adesto nobis;</p>
+          <p>iudices enim</p>
+          <p>diem nobis dederunt</p>
+          <p>hodiernam:</p>
+          <p>sententia dicitur.</p>
+          <br>
+          <p>quare volo te praesente</p>
+          <p>de causa</p>
+          <p>cum adovcatis</p>
+          <p>tractare.</p>
+          <p>Adhibuisti?</p>
+          <p>Adhibui.</p>
+          <p>Quos? Tuos amicos.</p>
+          <p>Bene fecisti.</p>
+          <p>Constituisti?</p>
+          <p>circa quam horam?</p>
+          <p>in quo loco?</p>
+          <p>In foro,</p>
+          <p>in porticu</p>
+          <p>iuxta stoam</p>
+          <p>Victoriae.</p>
+          <p>Post modicum ibi venio.</p>
+          <br>
+          <p>Sed rogo, in mente habeas</p>
+          <p>Securus esto;</p>
+          <p>mihi pertinet.</p>
+          <p>Eamus nos</p>
+          <p>ad nummularium;</p>
+          <p>accipiamus ab eo</p>
+          <p>denarios centum;</p>
+          <p>demus causidico</p>
+          <p>honorarium</p>
+          <p>et advocatis</p>
+          <p>et iuris peritis,</p>
+          <p>ut incessanter</p>
+          <p>defendant nos.</p>
+          <p>Iste est.</p>
+          <p>Accipe ab eo nummos</p>
+          <p>et sequere.</p>
+          <p>Sicut constituimus,</p>
+          <p>adest Gaius.</p>
+          <p>convocemus eum</p>
+          <p>in consilium.</p>
+          <p>hic habemus</p>
+          <p>instrumenta.</p>
+          <p>Denuntiasti illi?</p>
+          <p>Denuntiavi.</p>
+          <p>Testatus es?</p>
+          <p>Testatus sum.</p>
+          <p>Paratus esto.</p>
+          <p>Paratus sum.</p>
+          <p>Et adversarius</p>
+          <p>interpellare vult.</p>
+          <p>Tace.</p>
+          <p>Taceo.</p>
+          <p>Silentium habete,</p>
+          <p>audiamus</p>
+          <p>sententiam.</p>
+          <p>audisti,</p>
+          <p>quia vicimus,</p>
+          <p>Gaie?</p>
+
+        </div>      
+
+        <div class="col-md-4">
+
+          <h4>Traducción</h4>
+
+          <p>Y el amo de la casa</p>
+          <p>acercándose</p>
+          <p>se encontró</p>
+          <p>con un amigo suyo</p>
+          <p>y le dijo: "¡hola Gayo!"</p>
+          <p>y le dio un beso.</p>
+          <p>Este le devolvió el saludo diciendo:</p>
+          <br>
+          <p>¡Qué bien estás, Lucio!</p>
+          <p>¿De verdad te estoy viendo?</p>
+          <p><span data-toggle="tooltip" data-placement="left" title="En adelante, L."><strong>Lucio:</strong></span> ¿Cómo estás?</p>
+          <p><span data-toggle="tooltip" data-placement="left" title="En adelante, G."><strong>Gayo:</strong></span> Todo bien, </p>
+          <p>¿y tú?</p>
+          <p>L.: Me alegro por ti</p>
+          <p>tanto como por mí.</p>
+          <p>Tengo</p>
+          <p>un juicio.</p>
+          <p>G.: ¿Contra quién?, </p>
+          <p>¿contra el cuestor?</p>
+          <p>L.: No</p>
+          <p>G.: ¿Entonces?, </p>
+          <p>¿contra el proconsul?</p>
+          <p>L.: Tampoco,</p>
+          <p>contra un magistrado</p>
+          <p>que está fuera de la jurisdicción del <span data-toggle="tooltip" data-placement="top" title="Se traduce como juez pues se refiere al iudex pedaneus que es designado por el gobernador"><strong>juez</strong></span></p>
+          <p>de la provincia.</p>
+          <p>G.: ¿Y de qué se trata</p>
+          <p>este caso?</p>
+          <p>L.: No es gran cosa;</p>
+          <p>es por un tema de dinero</p>
+          <p>así que ya ves.</p>
+          <p>Si tienes un rato</p>
+          <p>vente con nosotros</p>
+          <p>que los jueces</p>
+          <p>nos han citado </p>
+          <p>hoy</p>
+          <p>para declarar.</p>
+          <br>
+          <p>Así que quiero que estés presente</p>
+          <p>para tratar</p>
+          <p>el caso</p>
+          <p>junto con mis abogados.</p>
+          <p>G.: ¿Has buscado abogados?</p>
+          <p>L.: Sí.</p>
+          <p>G.: ¿Quiénes son? L.: Tus colegas.</p>
+          <p>G.: Bien hecho.</p>
+          <p>¿Habéis quedado?</p>
+          <p>¿Alrededor de qué hora y</p>
+          <p>dónde?</p>
+          <p>L.: En el foro, </p>
+          <p>en el pórtico, </p>
+          <p>cerca de la puerta</p>
+          <p>de la Victoria.</p>
+          <p>G.: Vengo en un rato.</p>
+          <p>L.: Pero por favor, acuérdate.</p>
+          <p>G.: No te preocupes, </p>
+          <p>me concierne.</p>
+          <br>
+          <p>L.: Vamos</p>
+          <p>al banquero</p>
+          <p>a pedirle</p>
+          <p>cien denarios</p>
+          <p>y se los damos al abogado defensor</p>
+          <p>como un <span data-toggle="tooltip" data-placement="top" title="Entiendo esto como una especie de soborno al abogado de la otra parte"><strong>honorario</strong></span>,</p>
+          <p>y a nuestros abogados</p>
+          <p>y a los expertos en leyes</p>
+          <p>para que nos defiendan</p>
+          <p>incansablemente.</p>
+          <p>Este es.</p>
+          <p>Que te dé las monedas</p>
+          <p>y ven conmigo.</p>
+          <p>Tal y como concretamos, </p>
+          <p>Gayo está aquí.</p>
+          <p>Vamos a traerle</p>
+          <p>a nuestra conversación.</p>
+          <p>Aquí tenemos</p>
+          <p>la garantía.</p>
+          <p>G.: ¿Has hecho un juramento?</p>
+          <p>L.: Sí.</p>
+          <p>G.: ¿Y has declarado?</p>
+          <p>L.: Sí.</p>
+          <p>G.: Pues prepárate.</p>
+          <p>L.: Estoy preparado.</p>
+          <p>G.: Tu adversario</p>
+          <p>quiere intervenir.</p>
+          <p>Calla.</p>
+          <p>L.: Estoy callado.</p>
+          <p>G.: Guarda silencio, </p>
+          <p>vamos a escuchar</p>
+          <p>el veredicto.</p>
+          <p>L.: ¿Has oído</p>
+          <p>que hemos ganado,</p>
+          <p>Gayo?</p>
+        </div> 
+
+        </div> <!-- fin primer coloquio -->
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        <em>Colloquium Montepessulanum</em></a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Texto en griego</h4>
+            <p>Ἐπιθυμῶ μαθεῖν</p>
+            <p>διάλεκτον Ἀττικήν,</p>
+            <p>ἐπιθυμῶ λίαν.</p>
+            <p>Ὅτι θέλεις</p>
+            <p>ῥήτωρ εἶναι</p>
+            <p>(δικολόγος,</p>
+            <p>δημηγόρος,</p>
+            <p>συνήγορος,</p>
+            <p>νομικός,</p>
+            <p>νομικός,</p>
+            <p>νομικός,</p>
+            <p>νομικός,</p>
+            <p>παράκλητος).</p>
+          </div> <!-- fin texto griego-->
+          <div class="col-md-4">
+            <h4>Texto en latín</h4>
+            <p>Cupio discere</p>
+            <p>sermonem Atticum,</p>
+            <p>cupio valde.</p>
+            <p>Quoniam vis</p>
+            <p>orator esse</p>
+            <p>(causidicus,</p>
+            <p>dicentarius,</p>
+            <p>actor,</p>
+            <p>iuris studiosus,</p>
+            <p>iuris peritus,</p>
+            <p>iuris consultus,</p>
+            <p>iuris prudens,</p>
+            <p>advocatus.)</p>
+          </div> <!-- fin texto latín --> 
+          <div class="col-md-4">
+            <h4>Traducción</h4>
+            <p>Quiero aprender</p>
+            <p>el dialecto Ático,</p>
+            <p>lo deseo sobremanera.</p>
+            <p>Desde que quieres</p>
+            <p>ser orador,</p>
+            <p><span data-toggle="tooltip" data-placement="right" title="Se adopta esta traducción puesto que el término causidicus en latín tiene una connotación despectiva."><strong>abogaducho</strong></span>,</p>
+            <p>orador popular,</p>
+            <p>procurador,</p>
+            <p>estudioso de la ley,</p>
+            <p>conocedor de esta;</p>
+            <p>entendido en leyes,</p>
+            <p>un letrado competente,</p>
+            <p>en fin, abogado...)</p>
+          </div> <!-- fin traducción -->
+
+        </div>  <!-- fin row -->
+      </div> <!-- fin panel-body-->
+    </div><!-- fin segundo colapsable -->
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        <em>Colloquium Harleianum</em></a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+           <h4>Texto en griego</h4>
+                <p>Κύριε,</p>
+                <p>χαῖρε,</p>
+                <p>σωθείης ἀεί,</p>
+                <p>προσφίλτατε.</p>
+                <p>πῶς</p>
+                <p>τὰ πράγματά σου;</p>
+                <p>πάντα καλῶς;</p>
+                <p>Ὡς οἱ θεοὶ</p>
+                <p>θέλουσιν.</p>
+                <p>Τί πράττεις; Nῦν</p>
+                <p>ἔπραττον,</p>
+                <p>νῦν δὲ</p>
+                <p>σχολάζομαι.</p>
+                <p>Θέλω σοι</p>
+                <p>ἐγχειρίσαι</p>
+                <p>τὴν διοίκησιν</p>
+                <p>τῆς ἐμῆς πράξεως.</p>
+                <p>ἄγωμεν.</p>
+                <p>περιπάτει</p>
+                <p>καὶ ἐγὼ</p>
+                <p>δώσω σοι</p>
+                <p>τί πράξηις.</p>
+                <p>πάντων γὰρ</p>
+                <p>τῶν ἀγαθῶν</p>
+                <p>ἄξιος εἶ.</p>  
+          </div> <!-- fin texto griego-->
+
+          <div class="col-md-4">
+            <h4>Texto en latín</h4>
+                <p>Domine, </p>
+                <p>salve.</p>
+                <p>Salvus sis semper,</p>
+                <p>amantissime.</p>
+                <p>Quomodo</p>
+                <p>res tuae?</p>
+                <p>Omnia bene?</p>
+                <p>Quomodo dii</p>
+                <p>volunt.</p>
+                <p>Quid agis? Modo</p>
+                <p>agebam,</p>
+                <p>nunc autem</p>
+                <p>vacat mihi.</p>
+                <p>Volo tibi</p>
+                <p>iniungere</p>
+                <p>administrationem</p>
+                <p>meae actionis.</p>
+                <p>Eamus;</p>
+                <p>ambula</p>
+                <p>et ego</p>
+                <p>do tibi</p>
+                <p>quid agas.</p>
+                <p>Omnium enim</p>
+                <p>bonorum</p>
+                <p>dignus es.</p>
+          </div> <!-- fin teto latín -->  
+
+          <div class="col-md-4">
+            <h4>Traducción</h4>
+                <p>- Señor,</p>
+                <p>¡hola!</p>
+                <p>Espero que estés siempre bien,</p>
+                <p>queridísmo.</p>
+                <p>¿Cómo</p>
+                <p>van tus asuntos?</p>
+                <p>¿Todo bien?</p>
+                <p>- Como los dioses</p>
+                <p>lo desean.</p>
+                <p>¿Cómo estás tú? - Hasta hace poco</p>
+                <p>hacía varias cosas,</p>
+                <p>pero ahora</p>
+                <p>estoy ocioso.</p>
+                <p>- Me gustaría</p>
+                <p>ofrecerte</p>
+                <p>la gestión</p>
+                <p>de mi juicio.</p>
+                <p>Vamos,</p>
+                <p>demos un paseo</p>
+                <p>y te</p>
+                <p>contaré</p>
+                <p>qué tienes que hacer.</p>
+                <p>- Claro,</p>
+                <p>te mereces todo</p>
+                <p>lo bueno.</p>
+          </div> <!-- fin traduccion --> 
+          
+        </div> <!-- fin row-->
+      </div> <!-- fin panel-body-->
+    </div>
+  </div>
+</div>
+
+
+      </div> 
+       
+      </div> <!--/container--> 
+     
+    </body>
+  </html>
+

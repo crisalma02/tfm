@@ -55,3 +55,7 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 span:hover {
     color: #900C3F;
 }
+.linkdicc {
+	color: black;
+	text-decoration: none;
+}

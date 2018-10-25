@@ -1,0 +1,26 @@
+                <p>Domine, </p>
+                <p>salve.</p>
+                <p>Salvus sis semper,</p>
+                <p>amantissime.</p>
+                <p>Quomodo</p>
+                <p>res tuae?</p>
+                <p>Omnia bene?</p>
+                <p>Quomodo dii</p>
+                <p>volunt.</p>
+                <p>Quid agis? Modo</p>
+                <p>agebam,</p>
+                <p>nunc autem</p>
+                <p>vacat mihi.</p>
+                <p>Volo tibi</p>
+                <p>iniungere</p>
+                <p>administrationem</p>
+                <p>meae actionis.</p>
+                <p>Eamus;</p>
+                <p>ambula</p>
+                <p>et ego</p>
+                <p>do tibi</p>
+                <p>quid agas.</p>
+                <p>Omnium enim</p>
+                <p>bonorum</p>
+                <p>dignus es.</p>
+          </div> <!-- fin texto latín -->

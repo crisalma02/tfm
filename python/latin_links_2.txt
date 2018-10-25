@@ -1,0 +1,14 @@
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Cupio&la=la">Cupio</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=discere&la=la">discere</a></p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=sermonem&la=la">sermonem</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Atticum&la=la">Atticum</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=cupio&la=la">cupio</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=valde&la=la">valde</a>.</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Quoniam&la=la">Quoniam</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=vis&la=la">vis</a></p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=orator&la=la">orator</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=esse&la=la">esse</a></p>
+            <p>(<a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=causidicus&la=la">causidicus</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dicentarius&la=la">dicentarius</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=actor&la=la">actor</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=iuris&la=la">iuris</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=studiosus&la=la">studiosus</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=iuris&la=la">iuris</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=peritus&la=la">peritus</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=iuris&la=la">iuris</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=consultus&la=la">consultus</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=iuris&la=la">iuris</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=prudens&la=la">prudens</a>,</p>
+            <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=advocatus&la=la">advocatus</a>.</p>
+          </div> <!-- fin texto latín -->
