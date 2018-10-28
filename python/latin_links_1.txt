@@ -1,10 +1,10 @@
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Et&la=la">Et</a> (<a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=familias&la=la">familias</a>)</p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Et&la=la">Et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=pater&la=la">pater</a>(<a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=familias&la=la">familias</a>)</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=procedens&la=la">procedens</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=ocurrit&la=la">ocurrit</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=amico&la=la">amico</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=suo&la=la">suo</a></p>
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dixit:&la=la">dixit:</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Ave&la=la">Ave</a>, <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Gaie&la=la">Gaie</a></p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dixit&la=la">dixit:</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Ave&la=la">Ave</a>, <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Gaius&la=la">Gaie</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=osculatus&la=la">osculatus</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=est&la=la">est</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=eum&la=la">eum</a>.</p>
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=resalutavit&la=la">resalutavit</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dicens:&la=la">dicens:</a></p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=resaluto&la=la">resalutavit</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dicens&la=la">dicens:</a></p>
           <br>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Bene&la=la">Bene</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=valeas&la=la">valeas</a>, <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Lucie&la=la">Lucie</a>;</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=est&la=la">est</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=te&la=la">te</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=videre&la=la">videre</a>?</p>
@@ -33,12 +33,12 @@
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=adesto&la=la">adesto</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=nobis&la=la">nobis</a>;</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=iudices&la=la">iudices</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=enim&la=la">enim</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=diem&la=la">diem</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=nobis&la=la">nobis</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dederunt&la=la">dederunt</a></p>
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=hodiernam:&la=la">hodiernam:</a></p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=hodiernam&la=la">hodiernam:</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=sententia&la=la">sententia</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=dicitur&la=la">dicitur</a>.</p>
           <br>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=quare&la=la">quare</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=volo&la=la">volo</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=te&la=la">te</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=praesente&la=la">praesente</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=de&la=la">de</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=causa&la=la">causa</a></p>
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=cum&la=la">cum</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=adovcatis&la=la">adovcatis</a></p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=cum&la=la">cum</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=advocatis&la=la">advocatis</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=tractare&la=la">tractare</a>.</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Adhibuisti&la=la">Adhibuisti</a>?</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Adhibui&la=la">Adhibui</a>.</p>
@@ -71,7 +71,7 @@
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=et&la=la">et</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=sequere&la=la">sequere</a>.</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Sicut&la=la">Sicut</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=constituimus&la=la">constituimus</a>,</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=adest&la=la">adest</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Gaius&la=la">Gaius</a>.</p>
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=convocemus&la=la">convocemus</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=eum&la=la">eum</a></p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=convoco&la=la">convocemus</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=eum&la=la">eum</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=in&la=la">in</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=consilium&la=la">consilium</a>.</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=hic&la=la">hic</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=habemus&la=la">habemus</a></p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=instrumenta&la=la">instrumenta</a>.</p>
@@ -90,4 +90,4 @@
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=sententiam&la=la">sententiam</a>.</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=audisti&la=la">audisti</a>,</p>
           <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=quia&la=la">quia</a> <a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=vicimus&la=la">vicimus</a>,</p>
-          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Gaie&la=la">Gaie</a>?</p>
+          <p><a target="_blank" href="http://www.perseus.tufts.edu/hopper/morph?l=Gaius&la=la">Gaie</a>?</p>

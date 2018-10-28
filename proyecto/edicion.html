@@ -11,9 +11,11 @@
       <link rel="stylesheet" href="../css/mystyle.css">
       <link rel="stylesheet" href="../font-awesome/css/fontawesome.css">
       <link rel="stylesheet" href="../font-awesome/css/fontawesome.min.css">
+      <link rel="shortcut icon" href="../img/favicon.jpeg" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="../js/bootstrap.min.js"></script>
-      <script>
+      <script src="../js/myjs.js"></script>
+      <!-- <script>
         $(function () {
           $('[data-toggle="tooltip"]').tooltip()
         })
@@ -48,14 +50,29 @@
                 allParas[i].setAttribute("style", "background-color:" + colorMark + ";");
         });
     };
-    
-     </script>
 
-	<script>
-		var mostrarValor = function(x){
-			alert(+x.options[x.selectedIndex].text);
-		}
-	</script>
+      // Get the modal
+      var modal = document.getElementById('myModal1');
+      // Get the button that opens the modal
+      var span = document.getElementsByClassName("close")[0];
+      // When the user clicks the button, open the modal 
+
+      var select = document.getElementById('legal');
+      select.addEventListener('change',
+        function(){
+          var selectedOption = this.options[select.selectedIndex];
+
+          var modal = document.getElementById(selectedOption.value);
+          modal.style.display = "block";
+
+          var span = modal.getElementsByClassName("close")[0];
+          
+          span.onclick = function() {
+              modal.style.display = "none";
+          }
+        });
+    
+     </script> -->
 
       <style>
         teiHeader, gen, number, case, per, tns, mood, form.hidden {
@@ -150,37 +167,317 @@
         </div>
     </div>
 
-  <div id="custom-search-input" class=" col-md-3 col-sm-6 col-xs-6">
+  <div class="col-md-3 col-sm-6 col-xs-6">
     <p>Palabras jurídicas en el texto:</p>
 
-        <div class="input-group">
-		<form action="#">	
-          	<select id="buscapalabra" onchange="mostrarValor(this);">
-	          <option value="">- - - </option>
-	          <option value="juicio"> Juicio</option>
-	          <option value="jurisdiccion">Jurisdicción</option>
-	          <option value="juez">Juez</option>
-	          <option value="caso">Caso</option>
-	          <option value="declarar">Declarar</option>
-	          <option value="abogado">Abogado</option>
-	          <option value="leyes">Leyes</option>
-	          <option value="veredicto">Veredicto</option>
-	          <option value="procurador">Procurador</option>
-	          <option value="letrado">Letrado</option>
-        	</select>
-        </form>
+    <div>
+      <select id="legal" name="legal">
+	     <option value="" selected>- - - </option>
+	     <option value="myModal1">Juicio</option>
+	     <option value="myModal2">Jurisdicción</option>
+	     <option value="myModal3">Juez</option>
+	     <option value="myModal4">Caso</option>
+	     <option value="myModal5">Declarar</option>
+	     <option value="myModal6">Abogado</option>
+	     <option value="myModal7">Leyes</option>
+	     <option value="myModal8">Veredicto</option>
+	     <option value="myModal9">Procurador</option>
+	     <option value="myModal10">Letrado</option>
+      </select>
+    </div>
+  </div>
 
-		<!-- <span>	   
-          <button class="btn btn-info btn-xs" style= "margin-left: 8%;">
-            <i class="glyphicon glyphicon-arrow-right"></i>
-          </button>
-        </span> -->  
- 
-
+            <!-- The Modal --><!--lo que me sal cuando pincho en la opción 1-->
+  <div id="myModal1" class="modal">
+        <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h4>JUICIO</h4>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="κριτήριον, ου">κριτήριον</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="iudex, -icis"><em>iudicium</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E148380" target="_blank">Juicio</a></td>
+            </tr>
+        </tbody>
+        </table>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
+    </div>
+  </div>
+  <!-- The Modal --><!--lo que me sal cuando pincho en la opción 2-->
+  <div id="myModal2" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>JURISDICCIÓN</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="ὑπογραφή, ὑπογραφῆς">ὑπογραφῆς</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="subscriptio, -onis"><em>subscriptione</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E149800" target="_blank">Jurisdicción</a></td>
+            </tr>
+        </tbody>
+        </table>
         </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
     </div>
+  </div>
+  <!-- The Modal --><!--lo que me sal cuando pincho en la opción 3-->
+  <div id="myModal3" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>JUEZ</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="v. διέπω">διέποντος</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="praesidium , ii"><em>praesidis</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E147890" target="_blank">Juez</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
     </div>
-    <br>
+  </div>
+
+	 <div id="myModal4" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>CASO</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="πρᾶγμᾰ, πράγμᾰτος">πρᾶγμα</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="praesidium , ii"><em>res</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E257490" target="_blank">Caso</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal5" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>DECLARAR</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>ἀπόφασιν ἐρούμενοι</td>
+              <td><em>sententia dicitur</em></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E89540" target="_blank">Declarar</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* En este caso, tanto en latín como en griego el verbo declarar se forma de manera compuesta, del estilo "hacer una declaración".</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal6" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>ABOGADO</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="συνήγορος, συνήγορον">συνηγόροις</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="advocatus, -i"><em>advocatis</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E950" target="_blank">Abogado</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal7" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>LEYES</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="νόμος,νόμου">νομικῶι</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="ius, iuris"><em>iuris</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E152500" target="_blank">Ley</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal8" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>VEREDICTO</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="ἀπόφᾰσις, -εως">ἀπόφασιν</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="sententia, -ae"><em>sententiam</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E244660" target="_blank">Veredicto</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal9" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>PROCURADOR</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="συνήγορος, συνήγορον">συνήγορος</span></td>
+              <td><span data-toggle="tooltip" data-placement="right" title="actor, actoris"><em>actor</em></span></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E198080" target="_blank">Procurador</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small><br>
+        <small>** Nótese que el griego utiliza la misma palabra en este caso que para abogado, lo que denota un léxico menos prolijo de esta lengua para el campo de las leyes.</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal10" class="modal">
+    <div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>LETRADO</h4>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Palabra en griego</th>
+              <th>Palabra en latín</th>
+              <th>Enlace al Diccionario del Español Jurídico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><span data-toggle="tooltip" data-placement="right" title="νομικός, ή, όν (adj.)">νομικός</span></td>
+              <td><em>iuris prudens</em></td>
+              <td><a class="link" href="http://dej.rae.es/#/entry-id/E198080" target="_blank">Letrado</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <small>* Pasa el ratón por encima de las palabras en griego y latín para ver su enunciado o su palabra de origen.</small><br>
+        <small>** Nótese que en este caso también se denota una escasez de léxico en griego, ya que se utiliza la misma palabra para referirse a términos para los cuales el latín cuenta con diversidad de conceptos.(νομικός / <em>iuris studiosus, iuris peritus, iuris prudens</em> etc.</small>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+ 
+</div>
+<br>
 <div class="container">
     <div class="panel-group" id="accordion">
   <div class="panel panel-default">
@@ -420,7 +717,7 @@
             </p>
             <p>
               <lb n="17">
-              ἐξ ὑπογραφῆς τοῦ διέποντος
+              ἐξ ὑπογραφῆς τοῦ <w name="nopers">διέποντος</w>
               </lb>
             </p>
             <p>
@@ -1183,7 +1480,7 @@
               </p>
               <p>
                 <lb n="12">
-                  <w name="conj">ut</w> incessanter
+                  <w name="conj">ut</w> <w name="adv">incessanter</w>
                 </lb>
               </p>
               <p>
