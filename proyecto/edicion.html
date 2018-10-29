@@ -15,64 +15,6 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="../js/bootstrap.min.js"></script>
       <script src="../js/myjs.js"></script>
-      <!-- <script>
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip()
-        })
-        $(function () {
-          $('[data-toggle="popover"]').popover()
-        });
-        function verbosgriego() {
-        $('#verbo input[type=checkbox]').each(function () {
-            var colorMark;
-            var allParas = document.getElementsByName(this.value);
-            if (this.value == "aor" && this.checked) colorMark = "#fbfbba";
-            else if (this.value == "pres" && this.checked) colorMark = "#c5e9fa";
-            else if (this.value == "nopers" && this.checked) colorMark = " #cbf7a1";
-            else {
-                colorMark = "none";
-            }
-            for (var i = 0; i < allParas.length; i++)
-                allParas[i].setAttribute("style", "background-color:" + colorMark + ";");
-        });
-    };
-        function palabraslatin() {
-        $('#palabra input[type=checkbox]').each(function () {
-            var colorMark;
-            var allParas = document.getElementsByName(this.value);
-            if (this.value == "prep" && this.checked) colorMark = "#FAB4CF";
-            else if (this.value == "conj" && this.checked) colorMark = "#FAC870";
-            else if (this.value == "adv" && this.checked) colorMark = "#98B4FA";
-            else {
-                colorMark = "none";
-            }
-            for (var i = 0; i < allParas.length; i++)
-                allParas[i].setAttribute("style", "background-color:" + colorMark + ";");
-        });
-    };
-
-      // Get the modal
-      var modal = document.getElementById('myModal1');
-      // Get the button that opens the modal
-      var span = document.getElementsByClassName("close")[0];
-      // When the user clicks the button, open the modal 
-
-      var select = document.getElementById('legal');
-      select.addEventListener('change',
-        function(){
-          var selectedOption = this.options[select.selectedIndex];
-
-          var modal = document.getElementById(selectedOption.value);
-          modal.style.display = "block";
-
-          var span = modal.getElementsByClassName("close")[0];
-          
-          span.onclick = function() {
-              modal.style.display = "none";
-          }
-        });
-    
-     </script> -->
 
       <style>
         teiHeader, gen, number, case, per, tns, mood, form.hidden {
@@ -187,9 +129,9 @@
     </div>
   </div>
 
-            <!-- The Modal --><!--lo que me sal cuando pincho en la opción 1-->
+  <!-- The Modal --><!--lo que me sale cuando pincho en la opción 1-->
   <div id="myModal1" class="modal">
-        <!-- Modal content -->
+    <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
       <h4>JUICIO</h4>
@@ -469,13 +411,6 @@
     </div>
   </div>
 
-
-
-
-
-
-
- 
 </div>
 <br>
 <div class="container">

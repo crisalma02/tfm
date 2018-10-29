@@ -19,6 +19,10 @@ teiHeader, gen, number, case, per, tns, mood, form.hidden {
 	border: solid #606668;
 	border-width: thin;
 }
+.jumbo {
+    border: solid #606668;
+    border-width: thin;
+}
 .titulojumbo {
 	font-size: 27px;
 }
